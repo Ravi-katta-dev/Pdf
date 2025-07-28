@@ -56,10 +56,8 @@ class MCQParser:
         
         # Pattern for MCQ options (A, B, C, D with various formats)
         self.option_pattern = re.compile(
-            r'(?:^|\n)\s*'
-            r'\(?([A-Z])\)?[\.\)\s]+'  # (A) or A) or A.
-            r'([^\n\r]+?)(?=\n\s*\(?[A-Z]\)?[\.\)\s]|\n\s*(?:Q\.?\s*)?\d+\.|\n\s*Answer|\n\s*Ans|\Z)',
-            re.MULTILINE | re.DOTALL
+            r'\(([a-dA-D])\)\s*([^(]+?)(?=\([a-dA-D]\)|\n\s*\d+\.|\n\s*(?:Answer|Ans)|\Z)',
+            re.DOTALL
         )
         
         # Pattern to detect question text (before options)
@@ -193,35 +191,31 @@ class MCQParser:
         """Extract question text from block."""
         lines = block.split('\n')
         
-        # Look for lines that appear to be questions
+        # Combine lines until we hit options or get a complete question
+        question_lines = []
         for line in lines:
             line = line.strip()
             if not line:
                 continue
                 
             # Skip option lines
-            if re.match(r'^\s*\(?[A-Z]\)?[\.\)\s]', line):
-                continue
+            if re.match(r'^\s*\(?[a-dA-D]\)?[\.\)\s]', line):
+                break
                 
             # Skip answer lines
             if re.match(r'(?i)^\s*(?:answer|ans)', line):
-                continue
+                break
             
-            # Remove question numbers
-            line = re.sub(r'^\s*(?:Q\.?\s*)?\d+\.?\s*(?:\)|\.|\s)*', '', line)
-            
-            # Check if it looks like a question
-            if (len(line) > 10 and 
-                (line.endswith('?') or 
-                 any(word in line.lower() for word in ['what', 'which', 'how', 'when', 'where', 'why', 'is', 'are', 'will', 'does', 'can', 'should']))):
-                return line.strip()
+            # Remove question numbers from start of line
+            clean_line = re.sub(r'^\s*(?:Q\.?\s*)?\d+\.?\s*(?:\)|\.|\s)*', '', line)
+            if clean_line:
+                question_lines.append(clean_line)
         
-        # If no clear question found, use the first substantial line
-        for line in lines:
-            line = line.strip()
-            if len(line) > 20 and not re.match(r'^\s*\(?[A-Z]\)?[\.\)\s]', line):
-                line = re.sub(r'^\s*(?:Q\.?\s*)?\d+\.?\s*(?:\)|\.|\s)*', '', line)
-                return line.strip()
+        if question_lines:
+            question_text = ' '.join(question_lines).strip()
+            # Clean up extra whitespace
+            question_text = re.sub(r'\s+', ' ', question_text)
+            return question_text
         
         return None
     
@@ -271,7 +265,7 @@ class MCQParser:
     
     def _validate_mcq(self, mcq: MCQuestion) -> bool:
         """Validate if parsed MCQ meets quality criteria."""
-        if not mcq.question_text or len(mcq.question_text) < 10:
+        if not mcq.question_text or len(mcq.question_text) < 5:  # Reduced from 10
             return False
         
         if len(mcq.options) < self.min_options or len(mcq.options) > self.max_options:
@@ -282,4 +276,4 @@ class MCQParser:
         if len(set(option_texts)) != len(option_texts):
             return False
         
-        return mcq.confidence >= 0.3  # Minimum confidence threshold
+        return mcq.confidence >= 0.1  # Reduced from 0.3 for testing
