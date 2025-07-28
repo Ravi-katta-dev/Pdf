@@ -1,0 +1,171 @@
+{
+  "Electronics": {
+    "Basic Electronics": [
+      "resistor", "capacitor", "inductor", "diode", "transistor", "voltage", "current",
+      "ohm", "ampere", "volt", "watt", "power", "circuit", "electronic", "semiconductor",
+      "LED", "photodiode", "zener", "BJT", "FET", "MOSFET", "operational amplifier",
+      "op-amp", "rectifier", "filter", "oscillator", "amplifier", "impedance", "reactance",
+      "frequency response", "bandwidth", "gain", "feedback", "stability", "saturation",
+      "cutoff", "active region", "biasing", "coupling", "decoupling"
+    ],
+    "Digital Electronics": [
+      "logic gate", "AND", "OR", "NOT", "NAND", "NOR", "XOR", "flip-flop", "counter",
+      "multiplexer", "demultiplexer", "encoder", "decoder", "digital", "binary",
+      "boolean", "truth table", "logic", "combinational", "sequential", "clock",
+      "synchronous", "asynchronous", "state machine", "register", "memory", "ROM",
+      "RAM", "microprocessor", "microcontroller", "ADC", "DAC"
+    ],
+    "Communication": [
+      "modulation", "demodulation", "AM", "FM", "PM", "antenna", "transmission",
+      "receiver", "frequency", "bandwidth", "signal", "noise", "SNR", "communication",
+      "radio", "microwave", "satellite", "fiber optic", "multiplexing", "protocol",
+      "wireless", "cellular", "bluetooth", "wifi", "GSM", "LTE", "5G"
+    ],
+    "Power Electronics": [
+      "power supply", "converter", "inverter", "rectifier", "chopper", "SMPS",
+      "transformer", "isolation", "regulation", "switching", "linear regulator",
+      "buck converter", "boost converter", "flyback", "forward converter",
+      "PWM", "power factor correction", "EMI", "EMC"
+    ]
+  },
+  "Electrical": {
+    "DC Circuits": [
+      "DC", "direct current", "ohm's law", "kirchhoff", "series", "parallel",
+      "resistance", "conductance", "node", "mesh", "superposition", "thevenin",
+      "norton", "maximum power transfer", "voltage divider", "current divider",
+      "independent source", "dependent source", "linearity", "reciprocity"
+    ],
+    "AC Circuits": [
+      "AC", "alternating current", "sinusoidal", "phasor", "impedance", "reactance",
+      "capacitive", "inductive", "resonance", "power factor", "RMS", "average",
+      "reactive power", "apparent power", "real power", "complex power",
+      "frequency domain", "time domain", "laplace transform", "fourier"
+    ],
+    "Machines": [
+      "motor", "generator", "transformer", "induction", "synchronous", "DC motor",
+      "AC motor", "stepper motor", "servo motor", "torque", "speed", "efficiency",
+      "power factor", "slip", "rotor", "stator", "winding", "commutator",
+      "brush", "field", "armature", "excitation", "starting", "control"
+    ],
+    "Power Systems": [
+      "transmission", "distribution", "protection", "relay", "circuit breaker",
+      "fuse", "earthing", "grounding", "insulation", "conductor", "cable",
+      "overhead line", "substation", "switchgear", "load flow", "fault analysis",
+      "stability", "SCADA", "smart grid", "renewable energy"
+    ],
+    "Control Systems": [
+      "control", "feedback", "open loop", "closed loop", "transfer function",
+      "block diagram", "signal flow graph", "stability", "controller",
+      "PID", "root locus", "bode plot", "nyquist", "state space"
+    ]
+  },
+  "Mechanical": {
+    "Thermodynamics": [
+      "heat", "temperature", "entropy", "enthalpy", "pressure", "volume",
+      "thermodynamic", "cycle", "engine", "refrigeration", "heat transfer",
+      "conduction", "convection", "radiation", "thermal", "carnot", "otto",
+      "diesel", "brayton", "rankine", "refrigerant", "COP", "efficiency"
+    ],
+    "Fluid Mechanics": [
+      "fluid", "flow", "pressure", "velocity", "viscosity", "turbulent", "laminar",
+      "bernoulli", "continuity", "pump", "turbine", "pipe", "flow rate",
+      "reynolds number", "boundary layer", "drag", "lift", "compressible",
+      "incompressible", "steady", "unsteady"
+    ],
+    "Mechanics": [
+      "force", "moment", "torque", "stress", "strain", "beam", "truss", "material",
+      "strength", "elastic", "plastic", "deformation", "mechanics", "statics",
+      "dynamics", "kinematics", "vibration", "fatigue", "fracture", "buckling"
+    ],
+    "Manufacturing": [
+      "machining", "casting", "forging", "welding", "cutting", "turning", "milling",
+      "drilling", "grinding", "CNC", "automation", "quality control", "tolerance",
+      "surface finish", "tool", "fixture", "jig", "die", "mold"
+    ]
+  },
+  "Computer Science": {
+    "Programming": [
+      "algorithm", "data structure", "programming", "code", "function", "variable",
+      "loop", "condition", "array", "pointer", "object", "class", "method",
+      "inheritance", "polymorphism", "encapsulation", "abstraction", "recursion",
+      "sorting", "searching", "complexity", "big O", "debugging"
+    ],
+    "Database": [
+      "database", "SQL", "table", "query", "join", "index", "normalization",
+      "primary key", "foreign key", "relationship", "RDBMS", "transaction",
+      "ACID", "concurrency", "locking", "backup", "recovery", "optimization"
+    ],
+    "Networks": [
+      "network", "protocol", "TCP", "IP", "HTTP", "FTP", "router", "switch",
+      "hub", "LAN", "WAN", "ethernet", "wireless", "OSI", "packet", "firewall",
+      "security", "encryption", "VPN", "DNS", "DHCP"
+    ],
+    "Operating Systems": [
+      "operating system", "process", "thread", "scheduling", "memory management",
+      "virtual memory", "file system", "interrupt", "system call", "deadlock",
+      "synchronization", "semaphore", "mutex", "kernel", "shell"
+    ]
+  },
+  "Mathematics": {
+    "Algebra": [
+      "equation", "polynomial", "matrix", "determinant", "eigenvalue", "vector",
+      "linear", "quadratic", "algebraic", "coefficient", "variable", "constant",
+      "system of equations", "gaussian elimination", "cramer's rule"
+    ],
+    "Calculus": [
+      "derivative", "integral", "limit", "continuity", "differentiation",
+      "integration", "partial", "differential", "calculus", "function",
+      "chain rule", "product rule", "quotient rule", "optimization"
+    ],
+    "Statistics": [
+      "probability", "statistics", "mean", "median", "mode", "variance",
+      "standard deviation", "distribution", "normal", "binomial", "poisson",
+      "hypothesis testing", "confidence interval", "correlation", "regression"
+    ],
+    "Discrete Mathematics": [
+      "discrete", "combinatorics", "permutation", "combination", "graph theory",
+      "tree", "logic", "set theory", "relations", "functions", "proof",
+      "induction", "recursion", "boolean algebra"
+    ]
+  },
+  "Physics": {
+    "Classical Mechanics": [
+      "motion", "velocity", "acceleration", "momentum", "energy", "work",
+      "power", "friction", "gravity", "newton", "mechanics", "kinematics",
+      "dynamics", "oscillation", "wave", "pendulum", "projectile", "circular motion"
+    ],
+    "Electromagnetism": [
+      "electric field", "magnetic field", "electromagnetic", "maxwell",
+      "gauss", "faraday", "lenz", "electromagnetic induction", "flux",
+      "capacitance", "inductance", "electromagnetic wave", "light"
+    ],
+    "Modern Physics": [
+      "quantum", "relativity", "photon", "electron", "atom", "nucleus",
+      "radioactivity", "particle", "wave-particle duality", "uncertainty",
+      "quantum mechanics", "special relativity", "general relativity"
+    ],
+    "Thermodynamics": [
+      "heat", "temperature", "entropy", "enthalpy", "internal energy",
+      "first law", "second law", "third law", "thermal equilibrium",
+      "phase transition", "ideal gas", "kinetic theory"
+    ]
+  },
+  "Railway Engineering": {
+    "Signaling": [
+      "signal", "signaling", "interlocking", "block", "track circuit",
+      "point", "lever", "cabin", "panel", "electronic interlocking",
+      "computer based interlocking", "automatic", "semi-automatic",
+      "absolute block", "automatic block", "token", "staff"
+    ],
+    "Telecommunications": [
+      "telecommunication", "telephone", "intercom", "public address",
+      "QUAD", "carrier", "exchange", "switching", "transmission",
+      "optical fiber", "microwave", "satellite communication"
+    ],
+    "Safety": [
+      "safety", "protection", "fail-safe", "vital", "SIL", "CENELEC",
+      "standards", "testing", "validation", "verification", "RAMS",
+      "hazard analysis", "risk assessment", "safety case"
+    ]
+  }
+}

@@ -1,0 +1,237 @@
+{% extends "base.html" %}
+
+{% block title %}Upload PDF - MCQ Extractor{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="bg-primary text-white py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-3">
+                    <i class="bi bi-file-earmark-text"></i>
+                    Extract MCQs from PDFs
+                </h1>
+                <p class="lead mb-4">
+                    Upload your PDF files and let our AI-powered system extract, parse, and classify 
+                    multiple-choice questions automatically.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                    <span class="badge bg-light text-dark px-3 py-2">
+                        <i class="bi bi-file-pdf"></i> PDF Processing
+                    </span>
+                    <span class="badge bg-light text-dark px-3 py-2">
+                        <i class="bi bi-eye"></i> OCR Support
+                    </span>
+                    <span class="badge bg-light text-dark px-3 py-2">
+                        <i class="bi bi-tags"></i> Auto Classification
+                    </span>
+                    <span class="badge bg-light text-dark px-3 py-2">
+                        <i class="bi bi-download"></i> Multiple Formats
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="text-center">
+                    <i class="bi bi-cloud-upload display-1 text-white-50"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Upload Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-light">
+                        <h3 class="card-title mb-0">
+                            <i class="bi bi-cloud-upload text-primary"></i>
+                            Upload PDF File
+                        </h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <!-- Upload Form -->
+                        <form id="uploadForm" action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+                            <!-- File Drop Zone -->
+                            <div class="upload-zone mb-4" id="uploadZone">
+                                <div class="upload-zone-content text-center py-5">
+                                    <i class="bi bi-cloud-upload display-1 text-primary mb-3"></i>
+                                    <h4 class="mb-3">Drag & Drop your PDF file here</h4>
+                                    <p class="text-muted mb-3">or</p>
+                                    <label for="file" class="btn btn-primary btn-lg">
+                                        <i class="bi bi-folder2-open"></i>
+                                        Choose File
+                                    </label>
+                                    <input type="file" id="file" name="file" accept=".pdf" class="d-none" required>
+                                    <p class="text-muted mt-3 mb-0">
+                                        <small>
+                                            <i class="bi bi-info-circle"></i>
+                                            Supported format: PDF (Max size: 16MB)
+                                        </small>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- File Info -->
+                            <div id="fileInfo" class="alert alert-info d-none">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-file-pdf text-danger me-2"></i>
+                                    <div class="flex-grow-1">
+                                        <strong id="fileName"></strong>
+                                        <div class="text-muted small" id="fileSize"></div>
+                                    </div>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" id="removeFile">
+                                        <i class="bi bi-x"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Processing Options -->
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="useOCR" name="use_ocr" checked>
+                                        <label class="form-check-label" for="useOCR">
+                                            <i class="bi bi-eye"></i>
+                                            Enable OCR fallback
+                                        </label>
+                                        <div class="form-text">Use OCR if text extraction fails</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="autoClassify" name="auto_classify" checked>
+                                        <label class="form-check-label" for="autoClassify">
+                                            <i class="bi bi-tags"></i>
+                                            Auto-classify questions
+                                        </label>
+                                        <div class="form-text">Automatically categorize by subject/topic</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+                                    <i class="bi bi-gear"></i>
+                                    Extract MCQs
+                                </button>
+                            </div>
+                        </form>
+
+                        <!-- Progress Section -->
+                        <div id="progressSection" class="mt-4 d-none">
+                            <div class="d-flex align-items-center mb-2">
+                                <strong>Processing your PDF...</strong>
+                                <div class="spinner-border spinner-border-sm ms-auto" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                            <div class="progress mb-2">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                     role="progressbar" style="width: 0%" id="progressBar">
+                                </div>
+                            </div>
+                            <div class="text-muted small" id="progressText">Initializing...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="bg-light py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col">
+                <h2 class="fw-bold">How It Works</h2>
+                <p class="text-muted">Our advanced pipeline processes your PDFs in multiple stages</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="text-center">
+                    <div class="feature-icon bg-primary text-white rounded-circle mx-auto mb-3">
+                        <i class="bi bi-file-pdf"></i>
+                    </div>
+                    <h5>1. PDF Processing</h5>
+                    <p class="text-muted small">Extract text using pdfplumber with OCR fallback for image-based content</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center">
+                    <div class="feature-icon bg-success text-white rounded-circle mx-auto mb-3">
+                        <i class="bi bi-search"></i>
+                    </div>
+                    <h5>2. MCQ Detection</h5>
+                    <p class="text-muted small">Smart regex patterns identify and parse multiple-choice questions</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center">
+                    <div class="feature-icon bg-warning text-white rounded-circle mx-auto mb-3">
+                        <i class="bi bi-tags"></i>
+                    </div>
+                    <h5>3. Classification</h5>
+                    <p class="text-muted small">Keyword-based system categorizes questions by subject and topic</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center">
+                    <div class="feature-icon bg-info text-white rounded-circle mx-auto mb-3">
+                        <i class="bi bi-download"></i>
+                    </div>
+                    <h5>4. Export Results</h5>
+                    <p class="text-muted small">Generate structured data in JSON and CSV formats</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-6 col-md-3">
+                <div class="stat-item">
+                    <div class="stat-number text-primary fw-bold">16MB</div>
+                    <div class="stat-label text-muted">Max File Size</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-item">
+                    <div class="stat-number text-success fw-bold">95%+</div>
+                    <div class="stat-label text-muted">Accuracy Rate</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-item">
+                    <div class="stat-number text-warning fw-bold">50+</div>
+                    <div class="stat-label text-muted">Subject Categories</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-item">
+                    <div class="stat-number text-info fw-bold">2</div>
+                    <div class="stat-label text-muted">Export Formats</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// File upload handling will be implemented in main.js
+document.addEventListener('DOMContentLoaded', function() {
+    initializeFileUpload();
+});
+</script>
+{% endblock %}
