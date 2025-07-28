@@ -1,0 +1,335 @@
+{% extends "base.html" %}
+
+{% block title %}Results - MCQ Extractor{% endblock %}
+
+{% block content %}
+<!-- Results Header -->
+<section class="bg-success text-white py-4">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h1 class="h3 mb-1">
+                    <i class="bi bi-check-circle"></i>
+                    Extraction Complete
+                </h1>
+                <p class="mb-0">Successfully processed: <strong>{{ filename }}</strong></p>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <a href="{{ url_for('index') }}" class="btn btn-light">
+                    <i class="bi bi-plus"></i>
+                    Process Another PDF
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Summary Statistics -->
+<section class="py-4 bg-light">
+    <div class="container">
+        <div class="row g-3">
+            <div class="col-6 col-md-3">
+                <div class="stat-card bg-white rounded p-3 text-center h-100">
+                    <div class="stat-number text-primary fw-bold h4 mb-1">{{ total_questions }}</div>
+                    <div class="stat-label text-muted small">Questions Found</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card bg-white rounded p-3 text-center h-100">
+                    <div class="stat-number text-success fw-bold h4 mb-1">{{ subjects_count }}</div>
+                    <div class="stat-label text-muted small">Subjects Detected</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card bg-white rounded p-3 text-center h-100">
+                    <div class="stat-number text-warning fw-bold h4 mb-1">{{ avg_confidence|round(2) }}%</div>
+                    <div class="stat-label text-muted small">Avg Confidence</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card bg-white rounded p-3 text-center h-100">
+                    <div class="stat-number text-info fw-bold h4 mb-1">{{ questions_with_answers }}</div>
+                    <div class="stat-label text-muted small">With Answers</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Action Buttons -->
+<section class="py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-md-start">
+                    <a href="{{ url_for('download', filename=json_file) }}" class="btn btn-primary">
+                        <i class="bi bi-download"></i>
+                        Download JSON
+                    </a>
+                    <a href="{{ url_for('download', filename=csv_file) }}" class="btn btn-success">
+                        <i class="bi bi-file-earmark-spreadsheet"></i>
+                        Download CSV
+                    </a>
+                    <a href="{{ url_for('download', filename=summary_file) }}" class="btn btn-info">
+                        <i class="bi bi-file-earmark-text"></i>
+                        Download Summary
+                    </a>
+                    <button type="button" class="btn btn-outline-secondary" onclick="window.print()">
+                        <i class="bi bi-printer"></i>
+                        Print Results
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Subject Breakdown -->
+{% if subject_breakdown %}
+<section class="py-4">
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title mb-0">
+                    <i class="bi bi-pie-chart"></i>
+                    Subject Distribution
+                </h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    {% for subject, count in subject_breakdown.items() %}
+                    <div class="col-md-6 col-lg-4 mb-3">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <div class="fw-bold">{{ subject }}</div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar" role="progressbar" 
+                                         style="width: {{ (count / total_questions * 100)|round(1) }}%">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ms-3">
+                                <span class="badge bg-primary">{{ count }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- MCQ Results -->
+<section class="py-4">
+    <div class="container">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h4 class="card-title mb-0">
+                    <i class="bi bi-list-ol"></i>
+                    Extracted Questions ({{ mcqs|length }})
+                </h4>
+                <div class="btn-group btn-group-sm" role="group">
+                    <input type="radio" class="btn-check" name="viewMode" id="viewAll" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="viewAll">All</label>
+                    
+                    <input type="radio" class="btn-check" name="viewMode" id="viewHigh" autocomplete="off">
+                    <label class="btn btn-outline-success" for="viewHigh">High Quality</label>
+                    
+                    <input type="radio" class="btn-check" name="viewMode" id="viewWithAnswers" autocomplete="off">
+                    <label class="btn btn-outline-info" for="viewWithAnswers">With Answers</label>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th style="width: 60px;">ID</th>
+                                <th>Question</th>
+                                <th style="width: 120px;">Subject</th>
+                                <th style="width: 120px;">Topic</th>
+                                <th style="width: 80px;">Quality</th>
+                                <th style="width: 80px;">Answer</th>
+                                <th style="width: 60px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for mcq in mcqs %}
+                            <tr class="mcq-row" 
+                                data-confidence="{{ mcq.confidence }}" 
+                                data-has-answer="{{ 'true' if mcq.correct_answer else 'false' }}">
+                                <td>
+                                    <span class="badge bg-secondary">{{ mcq.id }}</span>
+                                </td>
+                                <td>
+                                    <div class="question-text">
+                                        {{ mcq.question_text[:100] }}{% if mcq.question_text|length > 100 %}...{% endif %}
+                                    </div>
+                                    {% if mcq.options %}
+                                    <div class="options-preview mt-1">
+                                        <small class="text-muted">
+                                            {% for option in mcq.options[:2] %}
+                                                <span class="me-2">{{ option.label }}) {{ option.text[:30] }}{% if option.text|length > 30 %}...{% endif %}</span>
+                                            {% endfor %}
+                                            {% if mcq.options|length > 2 %}
+                                                <span class="text-muted">+{{ mcq.options|length - 2 }} more</span>
+                                            {% endif %}
+                                        </small>
+                                    </div>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if mcq.subject %}
+                                        <span class="badge bg-primary">{{ mcq.subject }}</span>
+                                    {% else %}
+                                        <span class="text-muted">-</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if mcq.topic %}
+                                        <span class="badge bg-info">{{ mcq.topic }}</span>
+                                    {% else %}
+                                        <span class="text-muted">-</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% set confidence_pct = (mcq.confidence * 100)|round(0)|int %}
+                                    {% if confidence_pct >= 70 %}
+                                        <span class="badge bg-success">{{ confidence_pct }}%</span>
+                                    {% elif confidence_pct >= 40 %}
+                                        <span class="badge bg-warning">{{ confidence_pct }}%</span>
+                                    {% else %}
+                                        <span class="badge bg-danger">{{ confidence_pct }}%</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if mcq.correct_answer %}
+                                        <span class="badge bg-success">{{ mcq.correct_answer }}</span>
+                                    {% else %}
+                                        <span class="text-muted">-</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-outline-primary" 
+                                            data-bs-toggle="modal" data-bs-target="#mcqModal" 
+                                            onclick="showMCQDetails('{{ mcq.id }}')">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MCQ Detail Modal -->
+<div class="modal fade" id="mcqModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Question Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="mcqModalBody">
+                <!-- Content will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Store MCQ data for modal display
+const mcqData = {{ mcqs|tojson }};
+
+function showMCQDetails(mcqId) {
+    const mcq = mcqData.find(m => m.id === mcqId);
+    if (!mcq) return;
+    
+    const modalBody = document.getElementById('mcqModalBody');
+    modalBody.innerHTML = `
+        <div class="mb-3">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+                <span class="badge bg-secondary">${mcq.id}</span>
+                <div>
+                    ${mcq.subject ? `<span class="badge bg-primary me-1">${mcq.subject}</span>` : ''}
+                    ${mcq.topic ? `<span class="badge bg-info">${mcq.topic}</span>` : ''}
+                </div>
+            </div>
+            <h6>Question:</h6>
+            <p class="border rounded p-3 bg-light">${mcq.question_text}</p>
+        </div>
+        
+        <div class="mb-3">
+            <h6>Options:</h6>
+            <div class="list-group">
+                ${mcq.options.map(opt => `
+                    <div class="list-group-item d-flex align-items-start">
+                        <span class="badge bg-secondary me-2 mt-1">${opt.label}</span>
+                        <span class="flex-grow-1">${opt.text}</span>
+                        ${mcq.correct_answer === opt.label ? '<i class="bi bi-check-circle-fill text-success ms-2"></i>' : ''}
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <h6>Quality Score:</h6>
+                <div class="progress mb-2">
+                    <div class="progress-bar ${mcq.confidence >= 0.7 ? 'bg-success' : mcq.confidence >= 0.4 ? 'bg-warning' : 'bg-danger'}" 
+                         style="width: ${Math.round(mcq.confidence * 100)}%"></div>
+                </div>
+                <small class="text-muted">${Math.round(mcq.confidence * 100)}% confidence</small>
+            </div>
+            <div class="col-md-6">
+                <h6>Correct Answer:</h6>
+                <p class="mb-0">
+                    ${mcq.correct_answer ? 
+                        `<span class="badge bg-success fs-6">${mcq.correct_answer}</span>` : 
+                        '<span class="text-muted">Not specified</span>'
+                    }
+                </p>
+            </div>
+        </div>
+    `;
+}
+
+// Filter functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const viewButtons = document.querySelectorAll('input[name="viewMode"]');
+    const mcqRows = document.querySelectorAll('.mcq-row');
+    
+    viewButtons.forEach(button => {
+        button.addEventListener('change', function() {
+            const mode = this.id;
+            
+            mcqRows.forEach(row => {
+                const confidence = parseFloat(row.dataset.confidence);
+                const hasAnswer = row.dataset.hasAnswer === 'true';
+                
+                let show = true;
+                
+                if (mode === 'viewHigh') {
+                    show = confidence >= 0.7;
+                } else if (mode === 'viewWithAnswers') {
+                    show = hasAnswer;
+                }
+                
+                row.style.display = show ? '' : 'none';
+            });
+        });
+    });
+});
+</script>
+{% endblock %}

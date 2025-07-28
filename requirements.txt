@@ -1,0 +1,10 @@
+Flask
+pdfplumber
+pytesseract
+opencv-python
+pandas
+numpy
+werkzeug
+jinja2
+pillow
+gunicorn
