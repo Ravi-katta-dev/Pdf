@@ -29,6 +29,10 @@ def create_app():
     # Configure the app
     Config.init_app(app)
     
+    # Create necessary directories
+    app.config['UPLOAD_FOLDER'].mkdir(exist_ok=True)
+    app.config['OUTPUT_FOLDER'].mkdir(exist_ok=True)
+    
     return app
 
 app = create_app()
@@ -315,10 +319,7 @@ def file_too_large(error):
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    # Create necessary directories
-    app.config['UPLOAD_FOLDER'].mkdir(exist_ok=True)
-    app.config['OUTPUT_FOLDER'].mkdir(exist_ok=True)
-    
     # Run the application
     debug_mode = app.config.get('DEBUG', False)
-    app.run(debug=debug_mode, host='0.0.0.0', port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=debug_mode, host='0.0.0.0', port=port)
