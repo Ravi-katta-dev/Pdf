@@ -1,0 +1,1401 @@
+RRB Technician Grade-01 all Computer Questions Hard To Easy Level
+
+Computer
+Q1. Which of the following file formats can be used while saving a workbook in MS Excel 2019 that is compatible with all
+other spreadsheet software programs?
+
+A) Portable Document Format (.pdf)
+
+B) Microsoft Excel Spreadsheet XML (.xlsx)
+
+C) Microsoft Excel Spreadsheet Beta (.xlsb)
+
+D) Comma-separated values (.csv)
+3.04% Attempted Right 82.62% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+B) hard links and direct linking
+
+C) hard links and junctions
+
+sR
+oo
+
+A) soft links and direct linking
+
+m
+
+Q2. There are two types of links supported in the NTFS file system, ________________.
+
+D) soft links and junctions
+
+3.95% Attempted Right 36.76% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+Q3. Which of the following statements is FALSE with respect to Style Set in Outlook for writing an email?
+
+You can change the colors or fonts that are used in a Style Set by clicking Change Styles in the Styles
+group, and then clicking Colors or Fonts.
+
+ew
+
+A)
+
+N
+
+If you changed the styles in a message and the styles are not updating the way you expected, click the
+B) Styles Dialog Box Launcher, and then click the Style Inspector button (located at the bottom of the pane) to
+find out whether text was manually formatted instead of formatted by using styles.
+
+After you select a Style, you can see a list of the style sets available within the styles. In the Styles group,
+click the Styles Dialog Box Launcher .
+
+ilw
+
+D)
+
+ay
+
+C) You can see how a Quick Style set will look in a message by pointing to a Style Set without clicking it.
+
+4.24% Attempted Right 38.48% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+Ra
+
+Q4. Which of the following behaviours aligns with netiquette guidelines?
+
+A) Ignoring others' opinions in online discussions
+C) Sharing properly cited information
+
+B) Sending respectful and constructive emails
+D) Responding promptly to messages
+
+4.99% Attempted Right 44.82% Wrong { 19/12/2024 --> 4:30 PM - 6:00 PM }
+
+Q5. The long form of DAC and MAC is:
+
+A) Direct Access Control and Mandatory Access Control
+B) Discretionary Access Control and Multiple Access Control
+C) Discretionary Access Control and Mandatory Access Control
+D) Direct Access Control and Multiple Access Control
+
+Click To Join Telegram Railway News Room || Railway Quick Updates || Free Notes ||
+
+6.68% Attempted Right 82.47% Wrong { 19/12/2024 --> 4:30 PM - 6:00 PM }
+
+Q6. Intel 8051 provides _____ interrupt structures and 8052 provides _____ interrupt structures.
+
+A) 6; 7
+
+B) 4; 5
+
+C) 7; 8
+
+D) 5; 6
+
+9.06% Attempted Right 33.83% Wrong { 19/12/2024 --> 4:30 PM - 6:00 PM }
+
+Q7. Which of the following options is used to search for help topics in MS-Word 2021?
+
+A) Access 'Help' from the 'View' tab.
+
+B) Go to the 'File' tab and select 'Help'.
+
+C) Click the 'Help' button in the Ribbon.
+
+D) Use the 'Tell me what you want to do' search box.
+11.05% Attempted Right 71.56% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+A) HTTP 2.1
+
+B) HTTP 3.1
+
+m
+
+Q8. The Mozilla Firefox/Google Chrome/Microsoft Edge requires support for the __________ protocol.
+
+C) HTTP 1.1
+
+D) HTTP 1.2
+
+sR
+oo
+
+11.41% Attempted Right 45.32% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q9. Which tab would you use to add a new slide to your MS PowerPoint presentation?
+
+A) Insert
+
+B) Design
+
+C) Transitions
+
+D) Home
+
+ew
+
+11.62% Attempted Right 83.07% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q10. Which of the following is the correct shortcut key to bring up the task manager directly using keyboard only?
+
+B) Windows + R
+
+N
+
+A) Ctrl + Windows + Enter
+
+C) Ctrl + Shift + Escape
+
+D) Ctrl + Alt + Delete
+
+12.95% Attempted Right 66.24% Wrong { 19/12/2024 --> 4:30 PM - 6:00 PM }
+
+ay
+
+Q11. Which of the following methods is used to create a custom series in MS-Excel?
+
+B) Using Conditional Formatting
+
+ilw
+
+A) Using Data Validation
+
+C) Using Sort & Filter
+
+D) Using the Fill Handle and dragging
+
+13.04% Attempted Right 47.77% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+Ra
+
+Q12. Identify the correct order of steps to configure your web browser.
+
+I. Enable cookies in your web browser
+II. Enable scripts to disable or replace context menus (Mozilla Firefox only)
+III. Enable file download on IE 11 running on Windows 2012
+IV. Enable JavaScript for your web browser
+
+A) IV, III, II, I '
+
+B) III, II, IV, I
+
+C) IV, I, III, II
+
+D) I, II, III, IV
+
+15.85% Attempted Right 34.02% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q13. In Microprocessor 8085 Address/Data buffer is a/an ________ buffer.
+
+A) 16 bit and unidirectional
+
+B) 8 bit and bi-directional
+
+C) 16 bit and bi-directional
+
+Click To Join Telegram Railway News Room || Railway Quick Updates || Free Notes ||
+
+D) 8 bit and unidirectional
+16.57% Attempted Right 54.84% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q14. Which of the following is NOT the member of microcontroller Intel 8051 series?
+
+A) 80C31BH
+
+B) 8044AH
+
+C) 80C51BH
+
+D) 87C51
+
+16.57% Attempted Right 28.51% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q15. Microprocessor 8085 operates on clock cycle with ______ duty cycle.
+
+A) 25%
+
+B) 50%
+
+C) 10%
+
+D) 75%
+
+18.35% Attempted Right 27.62% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+Intel 8051 microcontroller has _________ internal RAM.
+
+B) 128-byte
+
+C) 32-byte
+
+D) 16-byte
+
+sR
+oo
+
+A) 64-byte
+
+m
+
+Q16. Select the most appropriate option to fill in the blank.
+
+18.54% Attempted Right 52.04% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+Q17. Which of the following statements are true about GPU?
+
+i. The full form of GPU is Graphical User Interface.
+
+ew
+
+ii. GPUs are made for the acceleration and enhancement of computer graphics and processed images.
+iii. The GPU exists as an electronic circuit that can be found on graphics card.
+
+N
+
+iv. The GPU exists as a special electronic circuit that can be used in PCs and game consoles.
+
+A) Only i, ii, and iv
+
+B) i, ii, iii and iv
+
+C) Only ii and iii
+
+D) Only i, ii, and iii
+
+ay
+
+20.70% Attempted Right 56.56% Wrong { 19/12/2024 --> 4:30 PM - 6:00 PM }
+
+Q18. Select the most appropriate option to fill in the blank.
+
+ilw
+
+Intel 8051 microcontroller has _____ 16-bit timer/counter registers.
+
+B) one
+
+C) two
+
+D) four
+
+21.72% Attempted Right 40.70% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+Ra
+
+A) three
+
+Q19. The INF file processing functions provide setup and installation functionality that includes which of the following
+actions?
+
+1. Opening and closing an INF file
+2. Retrieving information about an INF file
+3. Retrieving information about source files and target directories for copy operations
+4. Performing the installation actions specified in an INF file section
+
+A) 1 and 2 only
+
+B) 1, 2, 3, and 4
+
+C) 1, 2 and 3 only
+
+D) 3 and 4 only
+
+21.75% Attempted Right 15.03% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q20. Intel 8051 microcontroller is a/an:
+
+Click To Join Telegram Railway News Room || Railway Quick Updates || Free Notes ||
+
+A) 64-bit microcontroller
+
+B) 16-bit microcontroller
+
+C) 24-bit microcontroller
+
+D) 8-bit microcontroller
+
+21.88% Attempted Right 52.39% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+Q21. From which tab of Task Manager can you end a non-responding application?
+
+A) Services
+
+B) Processes
+
+C) Startup
+
+D) Details
+
+21.95% Attempted Right 51.92% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q22. Tamper Protection is a feature that prevents unauthorised apps from changing your security settings. Which of the
+following Operating Systems supports the same?
+
+A) Windows 10
+
+B) Windows XP
+
+C) Linux
+
+D) Windows Vista
+
+m
+
+22.24% Attempted Right 41.28% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+sR
+oo
+
+Q23. By default, if you're in a business environment, everyone within your organisation can edit the linked file. To change
+these permissions, click on the arrow at the right of the attachment name to display a drop-down menu with a variety of
+permission options. Which of the following is NOT a permission option?
+
+A) Can ReView
+
+B) Can Delete
+
+C) Can View
+
+D) Can Edit
+
+23.82% Attempted Right 49.13% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+ew
+
+Q24. What is the range supported in MS-Word to change the size of the selected text?
+
+A) Between 1 and 1500, in multiples of 1 (such as 10 or 105)
+
+N
+
+B) Between 1 and 1638, in multiples of .5 (such as 10.5 or 105.5)
+
+ay
+
+C) Between 0.5 and 1000, in multiples of .5 (such as 10.5 or 105.5)
+
+ilw
+
+D) Between 0.5 and 2000, in multiples of .5 (such as 10.5 or 105.5)
+25.18% Attempted Right 28.38% Wrong { 19/12/2024 --> 4:30 PM - 6:00 PM }
+
+Q25. In microprocessor 8085, which of the following is a 16-bit register?
+
+B) W register
+
+Ra
+
+A) Z register
+
+C) Flag register
+
+D) Stack pointer
+
+26.09% Attempted Right 36.55% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q26. If you need to attach a large file that exceeds the email provider's limit, what is a common solution?
+
+A) Reduce the file's resolution.
+
+B) Break the file into smaller parts and send multiple emails.
+
+C) Use a cloud storage service and share the link.
+
+D) Compress the file into a .zip format.
+
+27.23% Attempted Right 64.73% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q27. Which of the following statements regarding the microprocessor 8085 is NOT correct?
+
+A)
+B)
+
+Click To Join Telegram Railway News Room || Railway Quick Updates || Free Notes ||
+
+C)
+D)
+27.34% Attempted Right 20.59% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q28. What happens if you enter a date that MS-Excel does NOT recognise?
+
+A) MS-Excel treats it as a text.
+
+B) MS-Excel displays an error message.
+
+C) MS-Excel automatically corrects the format.
+
+D) MS-Excel deletes the content.
+
+28.19% Attempted Right 54.64% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q29. Rishika accidently presses CTRL + H in MS Word, and a dialog box is displayed. Which dialog box is it?
+
+B) The Language dialog box
+
+m
+
+A) The Header and Footer dialog box
+C) The Bullets and Numbering dialog box
+
+D) The Find and Replace dialog box
+
+sR
+oo
+
+29.08% Attempted Right 53.54% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q30. The full form of DDR SDRAM is ______________.
+
+A) Double Data Rate Systematic Dynamic Random Access Memory
+
+ew
+
+B) Dynamic Data Rate Systematic Dynamic Random Access Memory
+
+C) Double Data Rate Synchronous Dynamic Random Access Memory
+
+N
+
+D) Data Dynamic Rate Synchronous Dynamic Random Access Memory
+29.71% Attempted Right 58.71% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+ay
+
+Q31. Which type of network topology is commonly used in Wide Area Networks (WANs)?
+
+B) Ring
+
+ilw
+
+A) Bus
+
+C) Star
+
+D) Mesh
+
+30.13% Attempted Right 57.84% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q32. Which option in the Print dialog box allows you to specify the range of pages to print in Microsoft Word 2010?
+
+B) Pages
+
+Ra
+
+A) Printer
+
+C) Orientation
+
+D) Copies
+
+31.96% Attempted Right 57.17% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q33. Match the following social networking sites from Group A to the allowed characters in Group B.
+
+Group A Group B
+I. Facebook A. Allowed up to 255 characters in the 'About' or bio field
+II. Instagram B. Allowed up to 150 characters in your bio field.
+III. Linkedin C. Allowed up to 3,000 characters in your bio field.
+IV. Twitter D. It has a 160-character limit for the bio field.
+
+Click To Join Telegram Railway News Room || Railway Quick Updates || Free Notes ||
+
+A) I-C, II-D, III-A, IV-B
+
+B) I-B, II-A, III-D, IV-C
+
+C) I-A, II-B, III-C, IV-D
+
+D) I-D, II-C, III-B, IV-A
+
+33.33% Attempted Right 34.47% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q34. Which menu option allows you to change the height and width of cells in MS-Excel?
+
+A) Format
+
+B) Review
+
+C) Insert
+
+D) Page Layout
+
+Q35. Select the most appropriate options to fill in the blanks.
+
+A) 16; 32 kilobytes
+
+sR
+oo
+
+Microprocessor 8085 has ________ address line, hence it can access ________ of the memory.
+
+m
+
+33.39% Attempted Right 59.82% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+B) 8; 32 kilobytes
+
+C) 8; 64 kilobytes
+
+D) 16; 64 kilobytes
+
+33.46% Attempted Right 40.00% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+Q36. Which part of the Linux OS controls a computer's boot up process?
+
+B) Daemons
+
+C) Init system
+
+D) Bootloader
+
+ew
+
+A) Kernel
+
+34.34% Attempted Right 36.79% Wrong { 19/12/2024 --> 4:30 PM - 6:00 PM }
+
+N
+
+Q37. What is the purpose of the 'grep' command in the Linux operating system?
+
+A) To rename files
+
+B) To display the calendar
+
+C) To display system processes
+
+ay
+
+D) To search for a specific pattern in a file
+
+ilw
+
+34.57% Attempted Right 21.69% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q38. In MS Word, which of the following is NOT an option provided in paragraph spacing of a document?
+
+B) Open
+
+Ra
+
+A) Compact
+
+C) No paragraph space
+
+D) Compatible Spacing
+
+35.44% Attempted Right 36.90% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q39. Convert decimal number 26.85 into binary equivalent.
+
+A) 11001.110110
+
+B) 1001.111010
+
+C) 11010.101010
+
+D) 11010.110110
+
+36.41% Attempted Right 37.22% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q40. Convert binary number 1101.1101 into decimal equivalent.
+
+A) 12.8125
+
+B) 13.8125
+
+C) 12.625
+
+D) 13.625
+
+36.55% Attempted Right 33.72% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q41. What type of chart is used to compare parts of a whole in MS-Excel?
+
+Click To Join Telegram Railway News Room || Railway Quick Updates || Free Notes ||
+
+A) Pie Chart
+
+B) Line Chart
+
+C) Histogram
+
+D) Column Chart
+
+36.65% Attempted Right 48.93% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q42. Select the correct order of steps to add a textbox without using a mouse.
+
+i) When you are finished typing and want to switch back to editing text in your document, press Esc.
+ii) Press the arrow keys to select the text box that you want, and then press Enter.
+iii) Press and release Alt, N, and then press X.
+iv) Type the text that you want.
+
+A) ii, iii, i, iv
+
+B) iv, iii, ii, i
+
+C) i, ii, iii, iv
+
+D) iii, ii, iv, i
+
+36.78% Attempted Right 36.90% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+m
+
+Q43. What is the name of the service unveiled by Reliance Jio Infocomm Limited, India's first satellite-based gigabit
+
+A) Jio Fiber Network
+
+sR
+oo
+
+broadband service, in October 2023?
+
+B) Digital Subscriber Lines
+
+C) Jio Space Fiber
+
+D) Mobile Broadband
+
+37.70% Attempted Right 49.00% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+Q44. ________________ is the latest version of Windows Operating System.
+
+B) Windows Vista
+
+C) Windows 10
+
+D) Windows 11
+
+ew
+
+A) Windows 12
+
+38.27% Attempted Right 56.62% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+N
+
+Q45. Which of the following is NOT a disadvantage of LAN?
+
+A) It can face security issues if the central server is not properly secured.
+C) It has a high initial setup cost.
+
+ay
+
+B) It has high data transmission rates.
+
+ilw
+
+D) It restricts the size of the network.
+
+39.22% Attempted Right 48.09% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+Q46. How can a user define cell address in an MS Excel sheet?
+
+Ra
+
+A) Column letter plus row number
+
+B) Column letter plus row letter
+
+C) Column number plus row letter
+
+D) Column number plus row number
+39.49% Attempted Right 44.70% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q47. How can you quickly change the case of selected text in MS Word?
+
+A) Use the keyboard shortcut ‘Shift + F3’
+
+B) Right-click the selected text and choose ‘Font’
+
+C) Change it manually by typing the text again
+
+D) Go to the ‘Home’ tab and click on ‘Change Case’
+
+40.13% Attempted Right 42.52% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+Q48. Which type of virus attaches itself to executable files and spreads when the file is run?
+
+A) Macro Virus
+
+B) Polymorphic Virus
+
+C) Boot Sector Virus
+
+D) File Infector Virus
+
+Click To Join Telegram Railway News Room || Railway Quick Updates || Free Notes ||
+
+40.49% Attempted Right 36.08% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+Q49. Which of the following shortcuts is used to Split the document window?
+
+A) Ctrl + Y
+
+B) Ctrl + Alt + C
+
+C) Ctrl + Alt + S
+
+D) Alt + Shift + C
+
+40.96% Attempted Right 30.52% Wrong { 19/12/2024 --> 4:30 PM - 6:00 PM }
+
+Q50. Which view allows you to organise the sequence of slides in your presentation in MS PowerPoint?
+
+A) Normal View
+
+B) Slide Sorter View
+
+C) Slide Show
+
+D) Reading View
+
+42.06% Attempted Right 46.06% Wrong { 19/12/2024 --> 4:30 PM - 6:00 PM }
+
+Q51. Which of the following is NOT a type of system software?
+
+B) Microsoft Office
+
+C) Utility software
+
+D) Firmware software
+
+m
+
+A) Operating system
+
+42.16% Attempted Right 54.31% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+sR
+oo
+
+Q52. Which of the following options is NOT used to perform the next animation or advance to the next slide in MS
+PowerPoint?
+
+A) Enter
+
+B) Shift+F5
+
+C) N
+
+D) Page Down
+
+44.29% Attempted Right 44.11% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+ew
+
+Q53. Match the options from Group A with Group B regarding Auto Fill Options in MS-Excel sheets.
+
+1. Copy Cells. I. Copy only the cell formatting
+
+N
+
+Group A Group B
+
+2. Fill Formatting Only II. Copy the entire contents of the cell, including the formulas and the formatting
+
+ay
+
+3. Fill Without Formatting III. Copy the contents of the cell, including the formulas but not the formatting
+
+B) 1-III, 2-I, 3-II
+
+ilw
+
+A) 1-II, 2-III, 3-I
+
+C) 1-II, 2-I, 3-III
+
+D) 1-I, 2-II, 3-III
+
+45.58% Attempted Right 35.78% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q54. What does PCB stand for?
+
+Ra
+
+A) Processor Control Board
+
+B) Printed Circuit Board
+
+C) Primary Circuit Board
+
+D) Power Control Board
+
+46.21% Attempted Right 49.94% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q55. The most common topologies used in LAN networks are _____________.
+
+A) bus, ring, and star
+
+B) mesh and ring only
+
+C) wired, wireless, and virtual
+
+D) insider threats, LAN sockets, viruses and malware
+46.42% Attempted Right 39.38% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q56. Rearrange the following search engines according to the popularity of people using it.
+
+I. Yahoo
+
+Click To Join Telegram Railway News Room || Railway Quick Updates || Free Notes ||
+
+II. Google
+III. Bing
+IV. Yandex
+
+A) I, II, III, IV
+
+B) II, I, IV, III
+
+C) II, III, I, IV .
+
+D) IV, III, II, I
+
+47.40% Attempted Right 49.53% Wrong { 19/12/2024 --> 4:30 PM - 6:00 PM }
+
+Q57. Which feature in MS PowerPoint allows you to apply visual effects to slides or objects?
+
+A) Layouts
+
+B) Designs
+
+C) Animations
+
+D) Transitions
+
+47.83% Attempted Right 42.12% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+m
+
+Q58. How do you view hidden files and folders in File Explorer in the Windows OS?
+
+B) Right-click -> Select 'View hidden files'
+
+sR
+oo
+
+A) Go to 'View' -> Select 'Show hidden items'
+C) Go to 'Settings' -> Select 'Hidden files'
+
+D) Go to 'Edit' -> Select 'Show hidden items'
+48.07% Attempted Right 38.39% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q59. You can save your MS-PowerPoint presentation in the newest format _____, or as an MS-PowerPoint 97-2003
+Presentation _____.
+
+B) (.pptx), (.ppt)
+
+C) (.odp), (.ppt)
+
+ew
+
+A) (.docx), (.doc)
+
+D) (.ppt), (.pptx)
+
+49.00% Attempted Right 39.03% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+B) Cloud-based detection
+
+C) Offline scanning
+
+D) Passive scanning
+
+ay
+
+A) Manual updates
+
+N
+
+Q60. Which feature is commonly found in modern anti-virus software to help with real-time threat detection?
+
+50.13% Attempted Right 31.49% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+ilw
+
+Q61. What does the clock speed of a CPU measure?
+
+A) The temperature of the CPU
+
+B) The amount of cache memory
+
+Ra
+
+C) The number of instructions executed per second
+
+D) The amount of data processed per second
+
+50.86% Attempted Right 44.15% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q62. Which type of virus is designed to attach itself to documents and spread through macros in programs like Microsoft
+Word or Excel?
+
+A) Polymorphic Virus
+
+B) Network Virus
+
+C) Resident Virus
+
+D) Macro Virus
+
+51.75% Attempted Right 25.83% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+Q63. Which of the following methods can be used to delete multiple columns simultaneously in Excel?
+
+A) Use the "Find and Replace" feature
+
+B) Select the columns, then right-click and press "Delete"
+
+C) Select the columns, then press the Delete key
+
+D) Use the "Clear" option from the Home tab
+
+52.08% Attempted Right 38.00% Wrong { 19/12/2024 --> 4:30 PM - 6:00 PM }
+
+Click To Join Telegram Railway News Room || Railway Quick Updates || Free Notes ||
+
+Q64. To select multiple slides, press and hold the _____ key, and then click each slide.
+
+A) Ctrl
+
+B) Home
+
+C) Shift
+
+D) Alt
+
+54.91% Attempted Right 36.41% Wrong { 19/12/2024 --> 4:30 PM - 6:00 PM }
+
+Q65. Which HTTP method is typically used to download a web page?
+
+A) POST
+
+B) DELETE
+
+C) PUT
+
+D) GET
+
+55.25% Attempted Right 25.49% Wrong { 19/12/2024 --> 4:30 PM - 6:00 PM }
+
+Q66. What happens when you click the 'Font Color' button in the Home tab of MS-Word?
+
+A) It changes the font color of the selected text to the default color.
+C) It opens the Font dialog box.
+
+m
+
+B) It changes the background color of the selected text.
+
+sR
+oo
+
+D) It opens a drop-down list of colors to choose from.
+
+58.64% Attempted Right 30.23% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+Q67. What is the purpose of setting a print area in a spreadsheet?
+
+A) To highlight the area with colours
+
+B) To define the range of cells to be printed
+
+C) To freeze rows and columns
+
+D) To adjust the font size
+
+ew
+
+59.73% Attempted Right 23.56% Wrong { 19/12/2024 --> 4:30 PM - 6:00 PM }
+
+text?
+
+A) Ctrl + U
+
+B) Ctrl + S
+
+N
+
+Q68. Which of the following keyboard shortcuts is NOT used in MS Word 2019 to manipulate the formatting of selected
+
+C) Ctrl + I
+
+D) Ctrl + B
+
+ilw
+
+Q69. What is the full form of PCB?
+
+ay
+
+60.32% Attempted Right 23.79% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+A) Picture Circuit Board
+
+B) Printed Circuit Board
+
+C) Printed Control Board
+
+D) Picture Control Board
+
+60.70% Attempted Right 32.07% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+Ra
+
+Q70. Which of the following is NOT an example of application software?
+
+A) Windows Vista
+
+B) Google Chrome
+
+C) Adobe Photoshop
+
+D) WhatsApp
+
+60.78% Attempted Right 37.77% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+Q71. How do you sort data in Microsoft (MS) Excel in ascending or descending order?
+
+A) By selecting 'Sort' from the Format menu
+B)
+
+By selecting the data range, then choosing 'Sort' from the Data menu and specifying the sorting criteria
+and order
+
+C) By right-clicking on the data and selecting 'Sort' from the context menu
+D) By clicking on the 'Sort' button in the toolbar
+
+Click To Join Telegram Railway News Room || Railway Quick Updates || Free Notes ||
+
+62.04% Attempted Right 17.35% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+Q72. What action should be taken if an antivirus software detects a virus?
+
+A) Follow the software’s instructions to quarantine or remove the virus.
+B) Ignore the warning and continue using the computer.
+
+C) Delete the infected files immediately.
+
+D) Perform a system backup before taking any action.
+64.83% Attempted Right 30.55% Wrong { 19/12/2024 --> 4:30 PM - 6:00 PM }
+
+Q73. What is the purpose of the 'Sleep' option in the Windows OS?
+
+A) To shut down the system
+
+B) To restart the system
+
+m
+
+C) To save all open documents and programs while reducing power consumption
+
+sR
+oo
+
+D) To delete temporary files
+
+68.11% Attempted Right 27.08% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q74. What does the 'This PC' icon on a Windows desktop represent?
+
+A) An application launcher
+
+B) A file that stores system updates
+
+D) A shortcut to the Control Panel
+
+ew
+
+C) Access to drives, files and system properties
+
+68.41% Attempted Right 20.68% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+B) Hibernate
+
+C) Shutdown
+
+D) Sleep
+
+ay
+
+A) Restart
+
+N
+
+Q75. Which power-saving mode is most suitable for short breaks when you want to resume work quickly?
+
+68.48% Attempted Right 28.21% Wrong { 19/12/2024 --> 4:30 PM - 6:00 PM }
+
+ilw
+
+Q76. In MS Word, what does the term 'font weight' refer to?
+
+A) The style of the font
+
+B) The colour of the font
+
+C) The spacing between characters
+
+Ra
+
+D) The thickness of the font
+
+68.89% Attempted Right 21.15% Wrong { 19/12/2024 --> 4:30 PM - 6:00 PM }
+
+Q77. When you first open a spreadsheet software, what is usually displayed?
+
+A) A blank spreadsheet with grids and cells
+
+B) A presentation slide
+
+C) A blank document
+
+D) A blank page without any grids
+70.34% Attempted Right 18.02% Wrong { 19/12/2024 --> 4:30 PM - 6:00 PM }
+
+Q78. What does the 'IF' function do in MS-Excel?
+
+A) It sorts the data.
+
+B) It sums up the data.
+
+C) It checks a condition and returns one value if true and another if false.
+
+D) It filters the data.
+
+Click To Join Telegram Railway News Room || Railway Quick Updates || Free Notes ||
+
+71.07% Attempted Right 11.13% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+Q79. What is the function of the 'AutoFit' feature in MS PowerPoint?
+
+A) Automatically adjusts the size of the text to fit the text box
+C) Changes the text colour based on the slide background
+
+B) Automatically adds bullet points to text
+D) Aligns text to the centre of the text box
+
+72.15% Attempted Right 12.55% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q80. Which of the following malware symptoms indicate that your computer may be infected?
+
+I. Slow computer performance
+
+m
+
+II. Erratic computer behaviour
+III. Unexplained data loss
+
+A) I, II, III, and IV
+
+sR
+oo
+
+IV. Frequent computer crashes
+
+B) III and IV only
+
+C) II, III and IV only
+
+D) I and II only
+
+72.17% Attempted Right 19.81% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q81. Which of the following platforms is primarily used for professional networking?
+
+B) Twitter
+
+C) Instagram
+
+D) LinkedIn
+
+ew
+
+A) Facebook
+
+72.20% Attempted Right 25.87% Wrong { 19/12/2024 --> 4:30 PM - 6:00 PM }
+
+N
+
+Q82. Which view is primarily used to run a slide show in MS-PowerPoint?
+
+A) Notes Page View
+
+B) Normal View
+
+C) Slide Show View
+
+D) Slide Sorter View
+
+ay
+
+73.69% Attempted Right 18.19% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+ilw
+
+Q83. When printing a web page, what is the 'Margins' setting control?
+
+A) The space between the content and the edges of the printed page
+B) The number of pages the content will span
+
+C) The color scheme of the web page
+
+Ra
+
+D) The font size of the content
+
+74.05% Attempted Right 14.76% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+Q84. What does real-time protection in antivirus software do?
+
+A) Continuously monitors and scans files for malware
+
+B) Provides updates for new antivirus versions
+
+C) Scans files only when manually initiated
+
+D) Creates a backup of important files
+74.16% Attempted Right 16.08% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q85. Which element is typically found at the bottom left of the desktop in the Windows OS?
+
+A) Notification Center
+
+B) Start Menu
+
+C) Recycle Bin
+
+D) Quick Access Toolbar
+
+Click To Join Telegram Railway News Room || Railway Quick Updates || Free Notes ||
+
+76.80% Attempted Right 18.06% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+Q86. Which of the following is the standard method to print a web page using most modern web browsers?
+
+A) Pressing Ctrl + P (Windows) or Cmd + P (Mac)
+
+B) Right-clicking and selecting 'Save As'
+
+C) Pressing F12
+
+D) Pressing Ctrl + S (Windows) or Cmd + S (Mac)
+77.64% Attempted Right 12.39% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+Q87. What is the purpose of the 'Subject line' in an email?
+
+A) To include attachments with the email
+
+B) To provide a detailed explanation of the email content
+
+C) To give a brief summary of the email's topic
+
+D) To list the recipients of the email
+
+sR
+oo
+
+Q88. Write the correct order of steps to print a webpage from your android phone.
+
+1. On your Android device, open the Chrome app
+2. Tap Print
+3. At the top right, tap More Share.
+4. Open the page, image, or file you want to print.
+
+ew
+
+5. Select Print .
+6. To change any print settings, tap the Down arrow
+
+N
+
+7. At the top, select a printer.
+
+A) 1, 2, 3, 4, 5, 6, 7
+
+m
+
+77.72% Attempted Right 18.28% Wrong { 19/12/2024 --> 9:00 AM - 10:30 AM }
+
+B) 2, 4, 6, 1, 3, 5, 7
+
+C) 1, 4, 3, 5, 7, 6, 2
+
+D) 7, 6, 5, 4, 3, 2, 1
+
+ay
+
+79.67% Attempted Right 8.75% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+Q89. Which of the following is NOT an input device?
+
+B) Speaker
+
+ilw
+
+A) Mouse
+
+C) Optical Character Reader (OCR)
+
+D) Digitizer
+
+81.88% Attempted Right 17.19% Wrong { 19/12/2024 --> 4:30 PM - 6:00 PM }
+
+Ra
+
+Q90. Which of the following represents the applications used primarily for messaging and communication?
+
+A) Gmail and Firefox
+
+B) WhatsApp and Telegram
+
+C) Safari and MS Word
+
+D) Telegram and Safari
+
+84.98% Attempted Right 13.33% Wrong { 19/12/2024 --> 12:45 PM - 2:15 PM }
+
+Q91. How can a computer virus affect a system's functionality?
+
+A) By accelerating system boot time
+C) By causing software to malfunction or crash
+
+B) By optimizing system updates
+D) By improving hardware performance
+88.18% Attempted Right 8.78% Wrong { 19/12/2024 --> 4:30 PM - 6:00 PM }
+
+Q92. Which of the following is the most widely used search engine globally?
+
+A) DuckDuckGo
+
+B) Yahoo
+
+C) Google
+
+D) Bing
+
+Click To Join Telegram Railway News Room || Railway Quick Updates || Free Notes ||
+
+Ra
+
+ilw
+
+ay
+
+N
+
+ew
+
+sR
+oo
+
+m
+
+95.63% Attempted Right 3.48% Wrong { 20/12/2024 --> 9:00 AM - 10:30 AM }
+
+Click To Join Telegram Railway News Room || Railway Quick Updates || Free Notes ||
+
+
