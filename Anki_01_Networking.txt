@@ -1,0 +1,11 @@
+Network topologies	LAN: Bus/Ring/Star
+HTTP protocols	HTTP 1.1, GET/POST/PUT/DELETE methods
+LAN advantages and disadvantages	
+Email attachments and solutions	
+Netiquette guidelines	
+Social media character limits	
+DAC/MAC access control	
+Jio Space Fiber	
+Search engines popularity	
+Web browser configuration	
+Printing web pages	
