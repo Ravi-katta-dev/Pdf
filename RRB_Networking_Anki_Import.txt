@@ -1,0 +1,64 @@
+Front	Back
+What are the most common LAN topologies?	Bus, Ring, and Star
+What is the most common WAN topology?	Mesh
+Which HTTP method is used to download a web page?	GET
+Which HTTP version do modern browsers support?	HTTP 1.1
+What is an advantage of LAN that is NOT a disadvantage?	High data transmission rates
+What are the full forms of DAC and MAC?	DAC = Discretionary Access Control, MAC = Mandatory Access Control
+What is the best solution for sending large email attachments?	Use cloud storage service and share the link
+What are netiquette guidelines?	Send respectful emails, Respond promptly, Share properly cited information
+Social media character limits: Facebook	3,000 characters
+Social media character limits: Instagram	160 characters
+Social media character limits: LinkedIn	255 characters
+Social media character limits: Twitter	150 characters
+What is Jio Space Fiber?	India's first satellite-based gigabit broadband service (October 2023)
+Search engine popularity order	Google > Bing > Yahoo > Yandex
+Keyboard shortcut to print a web page	Ctrl + P (Windows) or Cmd + P (Mac)
+Two types of links in NTFS file system	Soft links and Junctions
+8085: How many address lines?	16 address lines
+8085: How much memory can it access?	64 kilobytes (2^16 = 65,536 bytes)
+8085: Address/Data buffer type	8-bit and bi-directional
+8085: Clock duty cycle	50%
+8085: Which is a 16-bit register?	Stack Pointer
+8051: What type of microcontroller?	8-bit microcontroller
+8051: Internal RAM size	128-byte
+8051: Number of timer/counter registers	TWO 16-bit timer/counter registers
+8051 vs 8052 interrupts	8051: 5 interrupts, 8052: 6 interrupts
+Which is NOT a member of 8051 series?	8044AH
+Convert decimal 26.85 to binary	11010.110110
+Convert binary 1101.1101 to decimal	13.8125
+Latest Windows OS version	Windows 11
+Task Manager keyboard shortcut	Ctrl + Shift + Esc
+Which tab to end non-responding app in Task Manager?	Processes
+Which OS supports Tamper Protection?	Windows 10
+Best power mode for short breaks	Sleep
+Linux: What controls boot up process?	Bootloader
+Linux: grep command purpose	Search for a specific pattern in a file
+MS Word: Ctrl + H shortcut	Find and Replace dialog box
+MS Word: Shift + F3 shortcut	Change case of selected text
+MS Word: Ctrl + Alt + S shortcut	Split the document window
+MS Word: Font size range	1 to 1638, in multiples of 0.5
+MS Excel: Compatible format for all spreadsheets	.csv (Comma-separated values)
+MS Excel: How to define cell address?	Column letter + Row number (e.g., A1, B5)
+MS Excel: What happens with unrecognized date?	Treats it as text
+MS Excel: Chart type for parts of a whole	Pie Chart
+MS Excel: IF function purpose	Checks a condition and returns one value if true and another if false
+MS PowerPoint: Which tab to add new slide?	Home tab
+MS PowerPoint: File formats	.pptx (newest), .ppt (97-2003)
+MS PowerPoint: View to organize slide sequence	Slide Sorter View
+MS PowerPoint: Key to select multiple slides	Ctrl key
+MS PowerPoint: Feature for visual effects	Animations
+Speaker is what type of device?	Output device (NOT input)
+What does CPU clock speed measure?	Number of instructions executed per second
+Full form of GPU	Graphics Processing Unit (NOT Graphical User Interface)
+Full form of PCB	Printed Circuit Board
+Full form of DDR SDRAM	Double Data Rate Synchronous Dynamic Random Access Memory
+File Infector Virus characteristic	Attaches itself to executable files and spreads when file is run
+Macro Virus characteristic	Attaches to documents and spreads through macros in MS Word or Excel
+Computer virus symptoms	Slow performance, Erratic behavior, Unexplained data loss, Frequent crashes (ALL)
+Antivirus real-time protection function	Continuously monitors and scans files for malware
+Action when antivirus detects virus	Follow software instructions to quarantine or remove the virus
+Platform for professional networking	LinkedIn
+Most widely used search engine	Google
+MS Office is what type of software?	Application software (NOT system software)
+INF file processing functions	1. Open/close INF file, 2. Retrieve INF info, 3. Retrieve source/target info, 4. Perform installation actions (ALL FOUR)
