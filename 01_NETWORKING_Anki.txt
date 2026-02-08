@@ -1,0 +1,26 @@
+Front\tBack
+What are the most common LAN topologies?\tBus, Ring, and Star
+What is the most common WAN topology?\tMesh
+Which HTTP method is used to download a web page?\tGET
+Which HTTP version do modern browsers support?\tHTTP 1.1
+What is POST method used for?\tTo send data to server
+What is PUT method used for?\tTo update existing data
+What is DELETE method used for?\tTo remove data
+What is an advantage of LAN that is NOT a disadvantage?\tHigh data transmission rates
+What are the disadvantages of LAN?\tHigh initial setup cost, Security issues if central server not secured, Restricts network size
+What are the full forms of DAC and MAC?\tDAC = Discretionary Access Control, MAC = Mandatory Access Control
+What is the best solution for sending large email attachments?\tUse cloud storage service and share the link
+What are the netiquette guidelines?\tSend respectful emails, Respond promptly, Share properly cited information, Don't ignore others' opinions
+Social media character limits: Facebook\t3,000 characters
+Social media character limits: Instagram\t160 characters
+Social media character limits: LinkedIn\t255 characters
+Social media character limits: Twitter\t150 characters
+What is Jio Space Fiber?\tIndia's first satellite-based gigabit broadband service (October 2023)
+Search engine popularity order\tGoogle > Bing > Yahoo > Yandex
+Keyboard shortcut to print a web page\tCtrl + P (Windows) or Cmd + P (Mac)
+What controls margin settings when printing web pages?\tSpace between content and edges of printed page
+Two types of links in NTFS file system\tSoft links and Junctions
+Web browser configuration order\t1. Enable JavaScript, 2. Enable cookies, 3. Enable file download IE11, 4. Enable context menu scripts (Firefox)
+What is the purpose of email subject line?\tTo give a brief summary of the email's topic
+LinkedIn is used for what type of networking?\tProfessional networking
+What are examples of messaging applications?\tWhatsApp and Telegram
