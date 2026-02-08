@@ -1,0 +1,11 @@
+IP Address	The unique identifier for a device on a network.
+Subnet Mask	A 32-bit number used to divide an IP address into network and host parts.
+Default Gateway	The node that serves as an access point to another network.
+DNS (Domain Name System)	Translates domain names into IP addresses.
+TCP (Transmission Control Protocol)	A connection-oriented protocol that ensures reliable delivery of data.
+UDP (User Datagram Protocol)	A connectionless protocol that allows for fast, but unreliable, data transmission.
+HTTP (HyperText Transfer Protocol)	The protocol used for transmitting web pages over the internet.
+HTTPS (HTTP Secure)	An extension of HTTP that uses SSL/TLS to secure data.
+FTP (File Transfer Protocol)	A standard network protocol used for the transfer of files from a server to a client.
+DHCP (Dynamic Host Configuration Protocol)	Automatically assigns IP addresses to devices on a network.
+NAT (Network Address Translation)	A technique for conserving IP addresses by mapping multiple private addresses to a single public address.
