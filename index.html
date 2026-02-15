@@ -1,0 +1,3697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RRB Integrated Enhanced Study Tool - Units & Measurements</title>
+    <meta name="description" content="Comprehensive study package for RRB Technician Grade I Signal preparation focusing on Units and Measurements">
+    <meta name="keywords" content="RRB, Technician, Signal, Units, Measurements, Conversion, Calculator, Study Tool">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --info-color: #17a2b8;
+            --light-bg: #f8f9fa;
+            --dark-bg: #343a40;
+            --border-radius: 8px;
+            --box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container-fluid {
+            padding: 0;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .header .subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            background: white;
+            border-bottom: none;
+            box-shadow: var(--box-shadow);
+            padding: 0 1rem;
+            overflow-x: auto;
+            flex-wrap: nowrap;
+        }
+
+        .nav-tabs .nav-link {
+            border: none;
+            border-radius: 0;
+            color: var(--primary-color);
+            font-weight: 500;
+            padding: 0.8rem 1rem;
+            margin: 0 0.2rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+        }
+
+        .nav-tabs .nav-link:hover {
+            background: var(--light-bg);
+            color: var(--secondary-color);
+        }
+
+        .nav-tabs .nav-link.active {
+            background: var(--secondary-color);
+            color: white;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            min-height: calc(100vh - 200px);
+            padding: 2rem 0;
+        }
+
+        .section-container {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .section-container.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Card Styles */
+        .card {
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            padding: 1rem;
+            font-weight: 600;
+        }
+
+        /* Form Controls */
+        .form-control, .form-select {
+            border-radius: var(--border-radius);
+            border: 2px solid #e9ecef;
+            padding: 0.75rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+        }
+
+        /* Buttons */
+        .btn {
+            border-radius: var(--border-radius);
+            padding: 0.6rem 1.2rem;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, var(--success-color) 0%, #2ecc71 100%);
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, var(--warning-color) 0%, #e67e22 100%);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, var(--accent-color) 0%, #c0392b 100%);
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Calculator Display */
+        .calculator-display {
+            background: #000;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.5rem;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            text-align: right;
+            margin-bottom: 1rem;
+            min-height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .calculator-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+        }
+
+        .calc-btn {
+            aspect-ratio: 1;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Conversion Results */
+        .conversion-result {
+            background: var(--light-bg);
+            border-left: 4px solid var(--success-color);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin: 1rem 0;
+        }
+
+        .conversion-steps {
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .step {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f8f9fa;
+        }
+
+        .step:last-child {
+            border-bottom: none;
+        }
+
+        /* Progress Bars */
+        .progress {
+            height: 10px;
+            border-radius: 5px;
+            background: #e9ecef;
+        }
+
+        .progress-bar {
+            border-radius: 5px;
+            transition: width 0.6s ease;
+        }
+
+        /* Game Elements */
+        .game-score {
+            background: linear-gradient(135deg, var(--success-color) 0%, #2ecc71 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .game-timer {
+            background: linear-gradient(135deg, var(--warning-color) 0%, #e67e22 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .achievement-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+            color: #333;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 0.2rem;
+        }
+
+        /* MCQ Styles */
+        .mcq-option {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            margin: 0.5rem 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .mcq-option:hover {
+            border-color: var(--secondary-color);
+            background: #f8f9fa;
+        }
+
+        .mcq-option.selected {
+            background: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        .mcq-option.correct {
+            background: var(--success-color);
+            color: white;
+            border-color: var(--success-color);
+        }
+
+        .mcq-option.incorrect {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+
+        /* Formula Cards */
+        .formula-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 1rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .formula-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            pointer-events: none;
+        }
+
+        .formula-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .formula-expression {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            background: rgba(0,0,0,0.2);
+            padding: 0.8rem;
+            border-radius: 5px;
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-tabs .nav-link {
+                font-size: 0.8rem;
+                padding: 0.6rem 0.8rem;
+            }
+
+            .calculator-buttons {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0.3rem;
+            }
+
+            .calc-btn {
+                font-size: 0.9rem;
+            }
+
+            .header h1 {
+                font-size: 1.2rem;
+            }
+
+            .header .subtitle {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Utility Classes */
+        .text-gradient {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Dark mode styles */
+        .dark-mode {
+            background: var(--dark-bg);
+            color: white;
+        }
+
+        .dark-mode .card {
+            background: #495057;
+            color: white;
+        }
+
+        .dark-mode .form-control,
+        .dark-mode .form-select {
+            background: #495057;
+            color: white;
+            border-color: #6c757d;
+        }
+
+        /* Print Styles */
+        @media print {
+            .nav-tabs, .btn, .header {
+                display: none !important;
+            }
+            
+            .main-content {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .card {
+                box-shadow: none;
+                border: 1px solid #ccc;
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles for accessibility */
+        .btn:focus,
+        .nav-link:focus,
+        .form-control:focus,
+        .mcq-option:focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1><i class="bi bi-calculator"></i> RRB Integrated Enhanced Study Tool</h1>
+                    <div class="subtitle">Units & Measurements | Technician Grade I Signal Preparation</div>
+                </div>
+                <div class="col-md-4 text-end">
+                    <button class="btn btn-outline-light btn-sm me-2" onclick="toggleDarkMode()">
+                        <i class="bi bi-moon-fill"></i> Dark Mode
+                    </button>
+                    <button class="btn btn-outline-light btn-sm" onclick="window.print()">
+                        <i class="bi bi-printer"></i> Print
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs-container">
+        <div class="container-fluid">
+            <ul class="nav nav-tabs" id="mainTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="mlt-tab" data-bs-toggle="tab" data-bs-target="#mlt" type="button" role="tab">
+                        <i class="bi bi-calculator"></i> MLT Calculator
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="converter-tab" data-bs-toggle="tab" data-bs-target="#converter" type="button" role="tab">
+                        <i class="bi bi-arrow-repeat"></i> Converter
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="calculator-tab" data-bs-toggle="tab" data-bs-target="#calculator" type="button" role="tab">
+                        <i class="bi bi-grid-3x3"></i> Calculator
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="games-tab" data-bs-toggle="tab" data-bs-target="#games" type="button" role="tab">
+                        <i class="bi bi-controller"></i> Games
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pdf-tab" data-bs-toggle="tab" data-bs-target="#pdf" type="button" role="tab">
+                        <i class="bi bi-file-earmark-pdf"></i> PDF Material
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="concepts-tab" data-bs-toggle="tab" data-bs-target="#concepts" type="button" role="tab">
+                        <i class="bi bi-book"></i> Concepts
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="formulas-tab" data-bs-toggle="tab" data-bs-target="#formulas" type="button" role="tab">
+                        <i class="bi bi-journals"></i> Formulas
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="solver-tab" data-bs-toggle="tab" data-bs-target="#solver" type="button" role="tab">
+                        <i class="bi bi-puzzle"></i> Problem Solver
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="mcq-tab" data-bs-toggle="tab" data-bs-target="#mcq" type="button" role="tab">
+                        <i class="bi bi-question-circle"></i> MCQs
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="test-tab" data-bs-toggle="tab" data-bs-target="#test" type="button" role="tab">
+                        <i class="bi bi-stopwatch"></i> Practice Test
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="reference-tab" data-bs-toggle="tab" data-bs-target="#reference" type="button" role="tab">
+                        <i class="bi bi-lightning"></i> Quick Reference
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="tab-content" id="mainTabContent">
+                
+                <!-- MLT Calculator Section -->
+                <div class="tab-pane fade show active" id="mlt" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5><i class="bi bi-calculator"></i> MLT Dimensional Analysis Calculator</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="mltQuantity" class="form-label">Physical Quantity:</label>
+                                            <select class="form-select" id="mltQuantity">
+                                                <option value="">Select a quantity...</option>
+                                                <option value="length">Length</option>
+                                                <option value="mass">Mass</option>
+                                                <option value="time">Time</option>
+                                                <option value="velocity">Velocity</option>
+                                                <option value="acceleration">Acceleration</option>
+                                                <option value="force">Force</option>
+                                                <option value="energy">Energy</option>
+                                                <option value="power">Power</option>
+                                                <option value="pressure">Pressure</option>
+                                                <option value="frequency">Frequency</option>
+                                                <option value="area">Area</option>
+                                                <option value="volume">Volume</option>
+                                                <option value="density">Density</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="customDimension" class="form-label">Or Enter Custom Dimension:</label>
+                                            <input type="text" class="form-control" id="customDimension" placeholder="e.g., M¹L²T⁻²">
+                                        </div>
+                                    </div>
+                                    <div class="mt-3">
+                                        <button class="btn btn-primary" onclick="analyzeDimension()">
+                                            <i class="bi bi-play-circle"></i> Analyze Dimension
+                                        </button>
+                                        <button class="btn btn-secondary ms-2" onclick="clearMLT()">
+                                            <i class="bi bi-arrow-clockwise"></i> Clear
+                                        </button>
+                                    </div>
+                                    <div id="mltResult" class="mt-4"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-info-circle"></i> MLT Reference</h6>
+                                </div>
+                                <div class="card-body">
+                                    <small>
+                                        <strong>Basic Dimensions:</strong><br>
+                                        M = Mass [kg]<br>
+                                        L = Length [m]<br>
+                                        T = Time [s]<br><br>
+                                        <strong>Examples:</strong><br>
+                                        Velocity: [LT⁻¹]<br>
+                                        Force: [MLT⁻²]<br>
+                                        Energy: [ML²T⁻²]<br>
+                                        Power: [ML²T⁻³]<br>
+                                        Pressure: [ML⁻¹T⁻²]
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Converter Section -->
+                <div class="tab-pane fade" id="converter" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5><i class="bi bi-arrow-repeat"></i> Multi-Category Converter</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label for="conversionCategory" class="form-label">Category:</label>
+                                        <select class="form-select" id="conversionCategory" onchange="updateUnits()">
+                                            <option value="length">Length</option>
+                                            <option value="mass">Mass</option>
+                                            <option value="time">Time</option>
+                                            <option value="speed">Speed</option>
+                                            <option value="energy">Energy</option>
+                                            <option value="power">Power</option>
+                                            <option value="pressure">Pressure</option>
+                                            <option value="temperature">Temperature</option>
+                                            <option value="area">Area</option>
+                                            <option value="volume">Volume</option>
+                                        </select>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="form-label">From:</label>
+                                            <div class="input-group">
+                                                <input type="number" class="form-control" id="fromValue" placeholder="Enter value" oninput="convertUnits()">
+                                                <select class="form-select" id="fromUnit" onchange="convertUnits()">
+                                                    <!-- Units will be populated by JavaScript -->
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">To:</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="toValue" readonly>
+                                                <select class="form-select" id="toUnit" onchange="convertUnits()">
+                                                    <!-- Units will be populated by JavaScript -->
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-3">
+                                        <button class="btn btn-info btn-sm" onclick="swapUnits()">
+                                            <i class="bi bi-arrow-left-right"></i> Swap Units
+                                        </button>
+                                        <button class="btn btn-success btn-sm ms-2" onclick="saveConversion()">
+                                            <i class="bi bi-bookmark"></i> Save
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card mt-3">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-train-front"></i> Railway Specific Calculations</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label for="railwayCalcType" class="form-label">Calculation Type:</label>
+                                        <select class="form-select" id="railwayCalcType" onchange="updateRailwayInputs()">
+                                            <option value="speed">Train Speed Conversion</option>
+                                            <option value="crossing">Crossing Time</option>
+                                            <option value="signal">Signal Distance</option>
+                                        </select>
+                                    </div>
+                                    <div id="railwayInputs">
+                                        <!-- Dynamic inputs based on calculation type -->
+                                    </div>
+                                    <button class="btn btn-warning" onclick="calculateRailway()">
+                                        <i class="bi bi-calculator"></i> Calculate
+                                    </button>
+                                    <div id="railwayResult" class="mt-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-clock-history"></i> Conversion History</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div id="conversionHistory" style="max-height: 200px; overflow-y: auto;">
+                                        <p class="text-muted">No conversions yet. Start converting to see history.</p>
+                                    </div>
+                                    <div class="mt-3">
+                                        <button class="btn btn-outline-primary btn-sm" onclick="exportHistory()">
+                                            <i class="bi bi-download"></i> Export History
+                                        </button>
+                                        <button class="btn btn-outline-danger btn-sm ms-2" onclick="clearHistory()">
+                                            <i class="bi bi-trash"></i> Clear History
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card mt-3">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-list-ol"></i> Step-by-Step Solution</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div id="conversionSteps">
+                                        <p class="text-muted">Perform a conversion to see detailed steps.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scientific Calculator Section -->
+                <div class="tab-pane fade" id="calculator" role="tabpanel">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5><i class="bi bi-grid-3x3"></i> Scientific Calculator</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="calculator-display" id="calculatorDisplay">0</div>
+                                    <div class="calculator-buttons">
+                                        <!-- Scientific functions row -->
+                                        <button class="btn btn-info calc-btn" onclick="scientificFunction('sin')">sin</button>
+                                        <button class="btn btn-info calc-btn" onclick="scientificFunction('cos')">cos</button>
+                                        <button class="btn btn-info calc-btn" onclick="scientificFunction('tan')">tan</button>
+                                        <button class="btn btn-info calc-btn" onclick="scientificFunction('log')">log</button>
+                                        
+                                        <!-- Memory functions row -->
+                                        <button class="btn btn-secondary calc-btn" onclick="memoryFunction('MC')">MC</button>
+                                        <button class="btn btn-secondary calc-btn" onclick="memoryFunction('MR')">MR</button>
+                                        <button class="btn btn-secondary calc-btn" onclick="memoryFunction('M+')">M+</button>
+                                        <button class="btn btn-secondary calc-btn" onclick="memoryFunction('M-')">M-</button>
+                                        
+                                        <!-- Number pad and operations -->
+                                        <button class="btn btn-danger calc-btn" onclick="clearCalculator()">C</button>
+                                        <button class="btn btn-warning calc-btn" onclick="backspace()">⌫</button>
+                                        <button class="btn btn-info calc-btn" onclick="calculateSquareRoot()">√</button>
+                                        <button class="btn btn-primary calc-btn" onclick="appendToCalculator('/')">/</button>
+                                        
+                                        <button class="btn btn-light calc-btn" onclick="appendToCalculator('7')">7</button>
+                                        <button class="btn btn-light calc-btn" onclick="appendToCalculator('8')">8</button>
+                                        <button class="btn btn-light calc-btn" onclick="appendToCalculator('9')">9</button>
+                                        <button class="btn btn-primary calc-btn" onclick="appendToCalculator('*')">×</button>
+                                        
+                                        <button class="btn btn-light calc-btn" onclick="appendToCalculator('4')">4</button>
+                                        <button class="btn btn-light calc-btn" onclick="appendToCalculator('5')">5</button>
+                                        <button class="btn btn-light calc-btn" onclick="appendToCalculator('6')">6</button>
+                                        <button class="btn btn-primary calc-btn" onclick="appendToCalculator('-')">-</button>
+                                        
+                                        <button class="btn btn-light calc-btn" onclick="appendToCalculator('1')">1</button>
+                                        <button class="btn btn-light calc-btn" onclick="appendToCalculator('2')">2</button>
+                                        <button class="btn btn-light calc-btn" onclick="appendToCalculator('3')">3</button>
+                                        <button class="btn btn-primary calc-btn" onclick="appendToCalculator('+')">+</button>
+                                        
+                                        <button class="btn btn-light calc-btn" onclick="appendToCalculator('0')">0</button>
+                                        <button class="btn btn-light calc-btn" onclick="appendToCalculator('.')">.</button>
+                                        <button class="btn btn-info calc-btn" onclick="calculatePower()">x²</button>
+                                        <button class="btn btn-success calc-btn" onclick="calculateResult()">=</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-list-ul"></i> Calculator History</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div id="calculatorHistory" style="max-height: 300px; overflow-y: auto;">
+                                        <p class="text-muted">No calculations yet.</p>
+                                    </div>
+                                    <button class="btn btn-outline-danger btn-sm mt-2" onclick="clearCalculatorHistory()">
+                                        <i class="bi bi-trash"></i> Clear History
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="card mt-3">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-book"></i> Quick Formulas</h6>
+                                </div>
+                                <div class="card-body">
+                                    <small>
+                                        <strong>Common Conversions:</strong><br>
+                                        • 1 m = 100 cm = 1000 mm<br>
+                                        • 1 km = 1000 m<br>
+                                        • 1 kg = 1000 g<br>
+                                        • 1 hour = 3600 seconds<br>
+                                        • Speed: km/h to m/s (÷ 3.6)<br>
+                                        • Area: π × r²<br>
+                                        • Volume: l × w × h
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conversion Games Section -->
+                <div class="tab-pane fade" id="games" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-speedometer2"></i> Speed Challenge</h6>
+                                </div>
+                                <div class="card-body text-center">
+                                    <div class="game-timer mb-3" id="speedTimer">60s</div>
+                                    <div class="game-score mb-3" id="speedScore">Score: 0</div>
+                                    <div id="speedQuestion" class="mb-3">
+                                        <p>Ready to start?</p>
+                                    </div>
+                                    <input type="number" class="form-control mb-3" id="speedAnswer" placeholder="Your answer" disabled>
+                                    <button class="btn btn-primary" id="startSpeedGame" onclick="startSpeedGame()">Start Game</button>
+                                    <button class="btn btn-success" id="submitSpeedAnswer" onclick="submitSpeedAnswer()" disabled>Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-trophy"></i> Unit Master Challenge</h6>
+                                </div>
+                                <div class="card-body text-center">
+                                    <div class="game-score mb-3" id="masterScore">Level: 1</div>
+                                    <div id="masterQuestion" class="mb-3">
+                                        <p>Complete 5 conversions correctly to advance!</p>
+                                    </div>
+                                    <div class="mb-3">
+                                        <select class="form-select mb-2" id="masterFromUnit" disabled>
+                                            <option>Select unit...</option>
+                                        </select>
+                                        <input type="number" class="form-control" id="masterAnswer" placeholder="Converted value" disabled>
+                                    </div>
+                                    <button class="btn btn-warning" id="startMasterGame" onclick="startMasterGame()">Start Challenge</button>
+                                    <button class="btn btn-success" id="submitMasterAnswer" onclick="submitMasterAnswer()" disabled>Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-award"></i> Achievements</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div id="achievements">
+                                        <div class="achievement-badge">Getting Started</div>
+                                        <div class="achievement-badge" style="opacity: 0.5;">Speed Demon</div>
+                                        <div class="achievement-badge" style="opacity: 0.5;">Conversion Master</div>
+                                        <div class="achievement-badge" style="opacity: 0.5;">Perfect Score</div>
+                                        <div class="achievement-badge" style="opacity: 0.5;">Time Master</div>
+                                        <div class="achievement-badge" style="opacity: 0.5;">Unit Guru</div>
+                                    </div>
+                                    <div class="mt-3">
+                                        <h6>Progress</h6>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar bg-success" id="gameProgress" style="width: 10%"></div>
+                                        </div>
+                                        <small class="text-muted">Complete more games to unlock achievements!</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-graph-up"></i> Game Statistics</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row text-center">
+                                        <div class="col-md-3">
+                                            <div class="stat-card">
+                                                <h3 id="totalGames">0</h3>
+                                                <p>Games Played</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="stat-card">
+                                                <h3 id="totalScore">0</h3>
+                                                <p>Total Score</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="stat-card">
+                                                <h3 id="bestTime">--</h3>
+                                                <p>Best Time</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="stat-card">
+                                                <h3 id="accuracy">--%</h3>
+                                                <p>Accuracy</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PDF Material Section -->
+                <div class="tab-pane fade" id="pdf" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5><i class="bi bi-file-earmark-pdf"></i> PDF Study Materials</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label for="pdfUpload" class="form-label">Upload PDF File:</label>
+                                        <input type="file" class="form-control" id="pdfUpload" accept=".pdf" onchange="loadPDF()">
+                                    </div>
+                                    <div id="pdfViewer" style="height: 500px; border: 1px solid #ddd; overflow: auto;">
+                                        <div class="text-center mt-5">
+                                            <i class="bi bi-file-earmark-pdf" style="font-size: 3rem; color: #ccc;"></i>
+                                            <p class="text-muted">Upload a PDF file to view</p>
+                                            <p class="small text-muted">Supported: RRB study materials, practice papers, formula sheets</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-bookmark"></i> Quick Links</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="list-group list-group-flush">
+                                        <a href="#" class="list-group-item list-group-item-action" onclick="loadSamplePDF('units')">
+                                            <i class="bi bi-file-text"></i> Units & Measurements Guide
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action" onclick="loadSamplePDF('conversion')">
+                                            <i class="bi bi-arrow-repeat"></i> Conversion Tables
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action" onclick="loadSamplePDF('formulas')">
+                                            <i class="bi bi-calculator"></i> Formula Reference
+                                        </a>
+                                        <a href="#" class="list-group-item list-group-item-action" onclick="loadSamplePDF('practice')">
+                                            <i class="bi bi-pencil-square"></i> Practice Problems
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mt-3">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-tools"></i> PDF Tools</h6>
+                                </div>
+                                <div class="card-body">
+                                    <button class="btn btn-outline-primary btn-sm me-2" onclick="zoomIn()">
+                                        <i class="bi bi-zoom-in"></i> Zoom In
+                                    </button>
+                                    <button class="btn btn-outline-primary btn-sm me-2" onclick="zoomOut()">
+                                        <i class="bi bi-zoom-out"></i> Zoom Out
+                                    </button>
+                                    <button class="btn btn-outline-secondary btn-sm" onclick="downloadPDF()">
+                                        <i class="bi bi-download"></i> Download
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Concepts Section -->
+                <div class="tab-pane fade" id="concepts" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5><i class="bi bi-book"></i> Units & Measurements Concepts</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="conceptSearch" placeholder="Search concepts..." oninput="searchConcepts()">
+                                    </div>
+                                    <div id="conceptsContent">
+                                        <div class="concept-section" data-topic="fundamental-units">
+                                            <h4>Fundamental Units</h4>
+                                            <p>The seven fundamental units are the basic units of measurement in the International System of Units (SI):</p>
+                                            <ul>
+                                                <li><strong>Length:</strong> meter (m)</li>
+                                                <li><strong>Mass:</strong> kilogram (kg)</li>
+                                                <li><strong>Time:</strong> second (s)</li>
+                                                <li><strong>Electric Current:</strong> ampere (A)</li>
+                                                <li><strong>Thermodynamic Temperature:</strong> kelvin (K)</li>
+                                                <li><strong>Amount of Substance:</strong> mole (mol)</li>
+                                                <li><strong>Luminous Intensity:</strong> candela (cd)</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="concept-section" data-topic="derived-units">
+                                            <h4>Derived Units</h4>
+                                            <p>Derived units are formed by combining fundamental units:</p>
+                                            <ul>
+                                                <li><strong>Area:</strong> m² (square meter)</li>
+                                                <li><strong>Volume:</strong> m³ (cubic meter)</li>
+                                                <li><strong>Velocity:</strong> m/s (meter per second)</li>
+                                                <li><strong>Acceleration:</strong> m/s² (meter per second squared)</li>
+                                                <li><strong>Force:</strong> N (Newton) = kg⋅m/s²</li>
+                                                <li><strong>Energy:</strong> J (Joule) = kg⋅m²/s²</li>
+                                                <li><strong>Power:</strong> W (Watt) = kg⋅m²/s³</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="concept-section" data-topic="dimensional-analysis">
+                                            <h4>Dimensional Analysis</h4>
+                                            <p>Dimensional analysis is a method to check equations and convert units using the dimensions of physical quantities.</p>
+                                            <p><strong>Key Points:</strong></p>
+                                            <ul>
+                                                <li>Only quantities with the same dimensions can be added or subtracted</li>
+                                                <li>Both sides of an equation must have the same dimensions</li>
+                                                <li>Trigonometric functions are dimensionless</li>
+                                                <li>Arguments of exponential and logarithmic functions must be dimensionless</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="concept-section" data-topic="significant-figures">
+                                            <h4>Significant Figures</h4>
+                                            <p>Rules for significant figures in measurements and calculations:</p>
+                                            <ul>
+                                                <li>All non-zero digits are significant</li>
+                                                <li>Zeros between non-zero digits are significant</li>
+                                                <li>Leading zeros are not significant</li>
+                                                <li>Trailing zeros after the decimal point are significant</li>
+                                                <li>In multiplication/division: result has fewest significant figures</li>
+                                                <li>In addition/subtraction: result has fewest decimal places</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="concept-section" data-topic="errors">
+                                            <h4>Errors in Measurement</h4>
+                                            <p>Types of errors and their calculation:</p>
+                                            <ul>
+                                                <li><strong>Systematic Error:</strong> Consistent error in one direction</li>
+                                                <li><strong>Random Error:</strong> Unpredictable variations in measurements</li>
+                                                <li><strong>Absolute Error:</strong> |Measured Value - True Value|</li>
+                                                <li><strong>Relative Error:</strong> (Absolute Error / True Value) × 100%</li>
+                                                <li><strong>Percentage Error:</strong> Relative Error expressed as percentage</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-list"></i> Topics</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="list-group list-group-flush">
+                                        <button class="list-group-item list-group-item-action" onclick="scrollToConcept('fundamental-units')">
+                                            Fundamental Units
+                                        </button>
+                                        <button class="list-group-item list-group-item-action" onclick="scrollToConcept('derived-units')">
+                                            Derived Units
+                                        </button>
+                                        <button class="list-group-item list-group-item-action" onclick="scrollToConcept('dimensional-analysis')">
+                                            Dimensional Analysis
+                                        </button>
+                                        <button class="list-group-item list-group-item-action" onclick="scrollToConcept('significant-figures')">
+                                            Significant Figures
+                                        </button>
+                                        <button class="list-group-item list-group-item-action" onclick="scrollToConcept('errors')">
+                                            Errors in Measurement
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formula Bank Section -->
+                <div class="tab-pane fade" id="formulas" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5><i class="bi bi-journals"></i> Formula Bank</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control" id="formulaSearch" placeholder="Search formulas..." oninput="searchFormulas()">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <select class="form-select" id="formulaCategory" onchange="filterFormulas()">
+                                                    <option value="">All Categories</option>
+                                                    <option value="basic">Basic Units</option>
+                                                    <option value="mechanics">Mechanics</option>
+                                                    <option value="electricity">Electricity</option>
+                                                    <option value="thermal">Thermal</option>
+                                                    <option value="conversion">Conversion</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="formulaList">
+                                        <!-- Formulas will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-bookmark-star"></i> Favorites</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div id="favoriteFormulas">
+                                        <p class="text-muted">No favorite formulas yet. Click the star icon next to formulas to add them here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Problem Solver Section -->
+                <div class="tab-pane fade" id="solver" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5><i class="bi bi-puzzle"></i> Interactive Problem Solver</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label for="problemType" class="form-label">Problem Type:</label>
+                                        <select class="form-select" id="problemType" onchange="updateProblemInputs()">
+                                            <option value="unit-conversion">Unit Conversion</option>
+                                            <option value="dimensional-analysis">Dimensional Analysis</option>
+                                            <option value="significant-figures">Significant Figures</option>
+                                            <option value="error-calculation">Error Calculation</option>
+                                        </select>
+                                    </div>
+                                    <div id="problemInputs">
+                                        <!-- Dynamic inputs based on problem type -->
+                                    </div>
+                                    <button class="btn btn-primary" onclick="solveProblem()">
+                                        <i class="bi bi-play-circle"></i> Solve Problem
+                                    </button>
+                                    <button class="btn btn-secondary ms-2" onclick="generateRandomProblem()">
+                                        <i class="bi bi-shuffle"></i> Random Problem
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-lightbulb"></i> Solution</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div id="problemSolution">
+                                        <p class="text-muted">Select a problem type and enter values to see the solution.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-collection"></i> Practice Problems</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row" id="practiceProblemsList">
+                                        <!-- Practice problems will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced MCQs Section -->
+                <div class="tab-pane fade" id="mcq" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5><i class="bi bi-question-circle"></i> Enhanced MCQs</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div>
+                                            <span class="badge bg-primary">Question <span id="currentQuestion">1</span> of <span id="totalQuestions">10</span></span>
+                                        </div>
+                                        <div>
+                                            <select class="form-select form-select-sm" id="mcqDifficulty" onchange="loadMCQs()">
+                                                <option value="easy">Easy</option>
+                                                <option value="medium">Medium</option>
+                                                <option value="hard">Hard</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="mcqQuestion">
+                                        <!-- MCQ questions will be populated by JavaScript -->
+                                    </div>
+                                    <div class="mt-3">
+                                        <button class="btn btn-primary" id="submitMCQ" onclick="submitMCQAnswer()">Submit Answer</button>
+                                        <button class="btn btn-secondary ms-2" onclick="nextMCQ()">Next Question</button>
+                                        <button class="btn btn-outline-info ms-2" onclick="showExplanation()">Show Explanation</button>
+                                    </div>
+                                    <div id="mcqExplanation" class="mt-3" style="display: none;">
+                                        <!-- Explanation will be shown here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-graph-up"></i> MCQ Progress</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="text-center mb-3">
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar bg-success" id="mcqProgress" style="width: 0%"></div>
+                                        </div>
+                                        <small class="text-muted">Progress: <span id="mcqProgressText">0%</span></small>
+                                    </div>
+                                    <div class="row text-center">
+                                        <div class="col-6">
+                                            <h4 id="mcqCorrect" class="text-success">0</h4>
+                                            <small>Correct</small>
+                                        </div>
+                                        <div class="col-6">
+                                            <h4 id="mcqIncorrect" class="text-danger">0</h4>
+                                            <small>Incorrect</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mt-3">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-bookmark"></i> Question Navigator</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div id="questionNavigator" class="d-flex flex-wrap gap-2">
+                                        <!-- Question navigation buttons -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Practice Test Section -->
+                <div class="tab-pane fade" id="test" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5><i class="bi bi-stopwatch"></i> Practice Test</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div id="testSetup" class="text-center">
+                                        <h4>Practice Test Setup</h4>
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="testDuration" class="form-label">Test Duration:</label>
+                                                    <select class="form-select" id="testDuration">
+                                                        <option value="10">10 minutes</option>
+                                                        <option value="20">20 minutes</option>
+                                                        <option value="30" selected>30 minutes</option>
+                                                        <option value="60">60 minutes</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="testQuestions" class="form-label">Number of Questions:</label>
+                                                    <select class="form-select" id="testQuestions">
+                                                        <option value="10">10 questions</option>
+                                                        <option value="20" selected>20 questions</option>
+                                                        <option value="30">30 questions</option>
+                                                        <option value="50">50 questions</option>
+                                                    </select>
+                                                </div>
+                                                <button class="btn btn-success btn-lg" onclick="startPracticeTest()">
+                                                    <i class="bi bi-play-circle"></i> Start Test
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="testInterface" style="display: none;">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <div>
+                                                <span class="badge bg-primary">Question <span id="testCurrentQ">1</span> of <span id="testTotalQ">20</span></span>
+                                            </div>
+                                            <div class="game-timer" id="testTimer">30:00</div>
+                                        </div>
+                                        <div id="testQuestion">
+                                            <!-- Test questions will be populated here -->
+                                        </div>
+                                        <div class="mt-3">
+                                            <button class="btn btn-primary" onclick="markForReview()">Mark for Review</button>
+                                            <button class="btn btn-success ms-2" onclick="nextTestQuestion()">Next</button>
+                                            <button class="btn btn-warning ms-2" onclick="submitTest()">Submit Test</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="testResults" style="display: none;">
+                                        <!-- Test results will be shown here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-grid-3x3"></i> Question Panel</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div id="testQuestionPanel">
+                                        <p class="text-muted">Start a test to see the question panel.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mt-3">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-info-circle"></i> Instructions</h6>
+                                </div>
+                                <div class="card-body">
+                                    <small>
+                                        <ul class="list-unstyled">
+                                            <li>• Select your answers carefully</li>
+                                            <li>• You can mark questions for review</li>
+                                            <li>• Timer counts down automatically</li>
+                                            <li>• Submit before time runs out</li>
+                                            <li>• Detailed results shown after submission</li>
+                                        </ul>
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Reference Section -->
+                <div class="tab-pane fade" id="reference" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5><i class="bi bi-lightning"></i> Essential Formulas</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="formula-card">
+                                        <div class="formula-title">Basic Conversions</div>
+                                        <div class="formula-expression">
+                                            1 km = 1000 m<br>
+                                            1 m = 100 cm = 1000 mm<br>
+                                            1 kg = 1000 g<br>
+                                            1 hour = 3600 s<br>
+                                            1 minute = 60 s
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="formula-card">
+                                        <div class="formula-title">Speed Conversions</div>
+                                        <div class="formula-expression">
+                                            km/h to m/s: divide by 3.6<br>
+                                            m/s to km/h: multiply by 3.6<br>
+                                            1 knot = 1.852 km/h
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="formula-card">
+                                        <div class="formula-title">Area & Volume</div>
+                                        <div class="formula-expression">
+                                            Circle: A = πr²<br>
+                                            Rectangle: A = l × w<br>
+                                            Cylinder: V = πr²h<br>
+                                            Sphere: V = (4/3)πr³
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5><i class="bi bi-table"></i> Quick Conversion Tables</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-sm">
+                                            <thead class="table-dark">
+                                                <tr>
+                                                    <th>Length</th>
+                                                    <th>Meters</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>1 km</td><td>1000 m</td></tr>
+                                                <tr><td>1 cm</td><td>0.01 m</td></tr>
+                                                <tr><td>1 mm</td><td>0.001 m</td></tr>
+                                                <tr><td>1 inch</td><td>0.0254 m</td></tr>
+                                                <tr><td>1 foot</td><td>0.3048 m</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="table-responsive mt-3">
+                                        <table class="table table-sm">
+                                            <thead class="table-dark">
+                                                <tr>
+                                                    <th>Mass</th>
+                                                    <th>Kilograms</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>1 g</td><td>0.001 kg</td></tr>
+                                                <tr><td>1 mg</td><td>0.000001 kg</td></tr>
+                                                <tr><td>1 ton</td><td>1000 kg</td></tr>
+                                                <tr><td>1 pound</td><td>0.4536 kg</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mt-3">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-keyboard"></i> Keyboard Shortcuts</h6>
+                                </div>
+                                <div class="card-body">
+                                    <small>
+                                        <strong>Navigation:</strong><br>
+                                        Ctrl + 1-9: Switch tabs<br>
+                                        Ctrl + P: Print<br>
+                                        Ctrl + F: Search<br><br>
+                                        <strong>Calculator:</strong><br>
+                                        Enter: Calculate<br>
+                                        Escape: Clear<br>
+                                        Backspace: Delete last
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-3 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2024 RRB Integrated Enhanced Study Tool. Made with ❤️ for RRB aspirants.</p>
+            <p><small>Units & Measurements | Technician Grade I Signal Preparation</small></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript -->
+    <script>
+        // Global variables
+        let calculatorMemory = 0;
+        let calculatorHistory = [];
+        let conversionHistory = [];
+        let gameStats = {
+            totalGames: 0,
+            totalScore: 0,
+            bestTime: null,
+            correctAnswers: 0,
+            totalAttempts: 0
+        };
+        let currentMCQ = 0;
+        let mcqAnswers = [];
+        let testActive = false;
+        let testStartTime = null;
+        let favoriteFormulas = [];
+
+        // Unit conversion data
+        const conversionData = {
+            length: {
+                m: 1,
+                km: 0.001,
+                cm: 100,
+                mm: 1000,
+                inch: 39.3701,
+                ft: 3.28084,
+                yard: 1.09361
+            },
+            mass: {
+                kg: 1,
+                g: 1000,
+                mg: 1000000,
+                ton: 0.001,
+                lb: 2.20462,
+                oz: 35.274
+            },
+            time: {
+                s: 1,
+                min: 1/60,
+                hour: 1/3600,
+                day: 1/86400,
+                week: 1/604800,
+                month: 1/2629746,
+                year: 1/31556952
+            },
+            speed: {
+                'ms': 1,
+                'kmh': 3.6,
+                'mph': 2.23694,
+                'knot': 1.94384,
+                'fps': 3.28084
+            },
+            energy: {
+                J: 1,
+                kJ: 0.001,
+                cal: 0.239006,
+                kcal: 0.000239006,
+                Wh: 0.000277778,
+                kWh: 0.000000277778
+            },
+            power: {
+                W: 1,
+                kW: 0.001,
+                MW: 0.000001,
+                hp: 0.00134102,
+                BTUh: 3.41214
+            },
+            pressure: {
+                Pa: 1,
+                kPa: 0.001,
+                MPa: 0.000001,
+                bar: 0.00001,
+                atm: 0.00000986923,
+                psi: 0.000145038
+            },
+            temperature: {
+                C: { offset: 0, scale: 1 },
+                F: { offset: 32, scale: 9/5 },
+                K: { offset: 273.15, scale: 1 }
+            },
+            area: {
+                m2: 1,
+                km2: 0.000001,
+                cm2: 10000,
+                mm2: 1000000,
+                inch2: 1550.0031,
+                ft2: 10.7639,
+                acre: 0.000247105,
+                hectare: 0.0001
+            },
+            volume: {
+                m3: 1,
+                L: 1000,
+                mL: 1000000,
+                cm3: 1000000,
+                inch3: 61023.7441,
+                ft3: 35.3147,
+                gallon: 264.172,
+                quart: 1056.69
+            }
+        };
+
+        // MLT dimensional data
+        const mltData = {
+            length: { M: 0, L: 1, T: 0, description: "Linear distance between two points" },
+            mass: { M: 1, L: 0, T: 0, description: "Amount of matter in an object" },
+            time: { M: 0, L: 0, T: 1, description: "Duration of events" },
+            velocity: { M: 0, L: 1, T: -1, description: "Rate of change of position" },
+            acceleration: { M: 0, L: 1, T: -2, description: "Rate of change of velocity" },
+            force: { M: 1, L: 1, T: -2, description: "Push or pull acting on an object" },
+            energy: { M: 1, L: 2, T: -2, description: "Capacity to do work" },
+            power: { M: 1, L: 2, T: -3, description: "Rate of energy transfer" },
+            pressure: { M: 1, L: -1, T: -2, description: "Force per unit area" },
+            frequency: { M: 0, L: 0, T: -1, description: "Number of events per unit time" },
+            area: { M: 0, L: 2, T: 0, description: "Extent of a surface" },
+            volume: { M: 0, L: 3, T: 0, description: "Amount of space occupied" },
+            density: { M: 1, L: -3, T: 0, description: "Mass per unit volume" }
+        };
+
+        // MCQ data
+        const mcqData = {
+            easy: [
+                {
+                    question: "What is the SI unit of length?",
+                    options: ["meter", "kilometer", "centimeter", "millimeter"],
+                    correct: 0,
+                    explanation: "The meter (m) is the fundamental SI unit of length."
+                },
+                {
+                    question: "How many centimeters are in 1 meter?",
+                    options: ["10", "100", "1000", "10000"],
+                    correct: 1,
+                    explanation: "1 meter = 100 centimeters. This is a basic metric conversion."
+                },
+                {
+                    question: "What is the dimension of velocity?",
+                    options: ["[LT⁻¹]", "[LT]", "[ML⁻¹]", "[MT⁻¹]"],
+                    correct: 0,
+                    explanation: "Velocity = distance/time, so its dimension is [LT⁻¹]."
+                }
+            ],
+            medium: [
+                {
+                    question: "A train travels 120 km in 2 hours. What is its speed in m/s?",
+                    options: ["16.67 m/s", "33.33 m/s", "60 m/s", "120 m/s"],
+                    correct: 0,
+                    explanation: "Speed = 120 km/2 h = 60 km/h = 60/3.6 m/s = 16.67 m/s"
+                },
+                {
+                    question: "What is the dimension of force?",
+                    options: ["[MLT⁻¹]", "[MLT⁻²]", "[ML²T⁻²]", "[ML⁻¹T⁻²]"],
+                    correct: 1,
+                    explanation: "Force = mass × acceleration = [M][LT⁻²] = [MLT⁻²]"
+                }
+            ],
+            hard: [
+                {
+                    question: "If the dimensions of energy are [ML²T⁻²], what are the dimensions of power?",
+                    options: ["[ML²T⁻¹]", "[ML²T⁻³]", "[MLT⁻²]", "[ML³T⁻²]"],
+                    correct: 1,
+                    explanation: "Power = Energy/Time = [ML²T⁻²]/[T] = [ML²T⁻³]"
+                }
+            ]
+        };
+
+        // Formula data
+        const formulaData = [
+            {
+                id: 1,
+                title: "Speed Formula",
+                formula: "v = d/t",
+                category: "mechanics",
+                description: "Speed equals distance divided by time",
+                variables: "v = speed, d = distance, t = time"
+            },
+            {
+                id: 2,
+                title: "Force Formula",
+                formula: "F = ma",
+                category: "mechanics",
+                description: "Force equals mass times acceleration",
+                variables: "F = force, m = mass, a = acceleration"
+            },
+            {
+                id: 3,
+                title: "Energy Formula",
+                formula: "E = mc²",
+                category: "mechanics",
+                description: "Energy equals mass times speed of light squared",
+                variables: "E = energy, m = mass, c = speed of light"
+            },
+            {
+                id: 4,
+                title: "Power Formula",
+                formula: "P = W/t",
+                category: "mechanics",
+                description: "Power equals work divided by time",
+                variables: "P = power, W = work, t = time"
+            },
+            {
+                id: 5,
+                title: "Pressure Formula",
+                formula: "P = F/A",
+                category: "mechanics",
+                description: "Pressure equals force divided by area",
+                variables: "P = pressure, F = force, A = area"
+            },
+            {
+                id: 6,
+                title: "Ohm's Law",
+                formula: "V = IR",
+                category: "electricity",
+                description: "Voltage equals current times resistance",
+                variables: "V = voltage, I = current, R = resistance"
+            },
+            {
+                id: 7,
+                title: "Electric Power",
+                formula: "P = VI",
+                category: "electricity",
+                description: "Power equals voltage times current",
+                variables: "P = power, V = voltage, I = current"
+            }
+        ];
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+            loadFromLocalStorage();
+            updateUnits();
+            updateRailwayInputs();
+            loadFormulas();
+            loadMCQs();
+            updateProblemInputs();
+            generatePracticeProblems();
+        });
+
+        // Initialize application
+        function initializeApp() {
+            console.log('RRB Integrated Enhanced Study Tool initialized');
+            
+            // Add keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey) {
+                    switch(e.key) {
+                        case '1': case '2': case '3': case '4': case '5':
+                        case '6': case '7': case '8': case '9':
+                            const tabIndex = parseInt(e.key) - 1;
+                            const tabs = document.querySelectorAll('#mainTabs .nav-link');
+                            if (tabs[tabIndex]) {
+                                tabs[tabIndex].click();
+                                e.preventDefault();
+                            }
+                            break;
+                        case 'p':
+                            window.print();
+                            e.preventDefault();
+                            break;
+                    }
+                }
+                
+                // Calculator shortcuts
+                if (document.getElementById('calculator').classList.contains('active')) {
+                    switch(e.key) {
+                        case 'Enter':
+                            calculateResult();
+                            e.preventDefault();
+                            break;
+                        case 'Escape':
+                            clearCalculator();
+                            e.preventDefault();
+                            break;
+                        case 'Backspace':
+                            if (!e.ctrlKey) {
+                                backspace();
+                                e.preventDefault();
+                            }
+                            break;
+                    }
+                }
+            });
+        }
+
+        // MLT Calculator Functions
+        function analyzeDimension() {
+            const quantity = document.getElementById('mltQuantity').value;
+            const custom = document.getElementById('customDimension').value.trim();
+            const resultDiv = document.getElementById('mltResult');
+
+            if (!quantity && !custom) {
+                resultDiv.innerHTML = '<div class="alert alert-warning">Please select a quantity or enter a custom dimension.</div>';
+                return;
+            }
+
+            let analysis;
+            if (custom) {
+                analysis = parseCustomDimension(custom);
+            } else {
+                analysis = mltData[quantity];
+            }
+
+            if (!analysis) {
+                resultDiv.innerHTML = '<div class="alert alert-danger">Invalid dimension format.</div>';
+                return;
+            }
+
+            const dimensionStr = formatDimension(analysis);
+            const siUnit = getSIUnit(analysis);
+
+            resultDiv.innerHTML = `
+                <div class="conversion-result">
+                    <h5>Dimensional Analysis Result</h5>
+                    <p><strong>Quantity:</strong> ${quantity || 'Custom'}</p>
+                    <p><strong>Dimension:</strong> ${dimensionStr}</p>
+                    <p><strong>SI Unit:</strong> ${siUnit}</p>
+                    ${analysis.description ? `<p><strong>Description:</strong> ${analysis.description}</p>` : ''}
+                </div>
+                <div class="conversion-steps">
+                    <h6>Analysis Steps:</h6>
+                    <div class="step">1. Identify the fundamental dimensions involved</div>
+                    <div class="step">2. Express in terms of M (Mass), L (Length), T (Time)</div>
+                    <div class="step">3. Determine the SI unit combination</div>
+                    <div class="step">4. Verify dimensional consistency</div>
+                </div>
+            `;
+        }
+
+        function parseCustomDimension(custom) {
+            // Simple parser for M^a L^b T^c format
+            const regex = /M([⁻⁰¹²³⁴⁵⁶⁷⁸⁹]*)|L([⁻⁰¹²³⁴⁵⁶⁷⁸⁹]*)|T([⁻⁰¹²³⁴⁵⁶⁷⁸⁹]*)/g;
+            let M = 0, L = 0, T = 0;
+            let match;
+
+            while ((match = regex.exec(custom)) !== null) {
+                if (match[1] !== undefined) M = parseExponent(match[1]);
+                if (match[2] !== undefined) L = parseExponent(match[2]);
+                if (match[3] !== undefined) T = parseExponent(match[3]);
+            }
+
+            return { M, L, T };
+        }
+
+        function parseExponent(exp) {
+            if (!exp || exp === '¹') return 1;
+            if (exp === '⁻¹') return -1;
+            if (exp === '²') return 2;
+            if (exp === '⁻²') return -2;
+            if (exp === '³') return 3;
+            if (exp === '⁻³') return -3;
+            return parseInt(exp) || 1;
+        }
+
+        function formatDimension(analysis) {
+            let result = '[';
+            if (analysis.M !== 0) {
+                result += 'M';
+                if (analysis.M !== 1) result += getSuperscript(analysis.M);
+            }
+            if (analysis.L !== 0) {
+                result += 'L';
+                if (analysis.L !== 1) result += getSuperscript(analysis.L);
+            }
+            if (analysis.T !== 0) {
+                result += 'T';
+                if (analysis.T !== 1) result += getSuperscript(analysis.T);
+            }
+            result += ']';
+            return result === '[]' ? '[1]' : result;
+        }
+
+        function getSuperscript(num) {
+            const superscripts = {'0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹','-':'⁻'};
+            return num.toString().split('').map(char => superscripts[char] || char).join('');
+        }
+
+        function getSIUnit(analysis) {
+            let unit = '';
+            if (analysis.M !== 0) {
+                unit += 'kg';
+                if (analysis.M !== 1) unit += '^' + analysis.M;
+                unit += ' ';
+            }
+            if (analysis.L !== 0) {
+                unit += 'm';
+                if (analysis.L !== 1) unit += '^' + analysis.L;
+                unit += ' ';
+            }
+            if (analysis.T !== 0) {
+                unit += 's';
+                if (analysis.T !== 1) unit += '^' + analysis.T;
+            }
+            return unit.trim() || '1 (dimensionless)';
+        }
+
+        function clearMLT() {
+            document.getElementById('mltQuantity').value = '';
+            document.getElementById('customDimension').value = '';
+            document.getElementById('mltResult').innerHTML = '';
+        }
+
+        // Conversion Functions
+        function updateUnits() {
+            const category = document.getElementById('conversionCategory').value;
+            const fromUnit = document.getElementById('fromUnit');
+            const toUnit = document.getElementById('toUnit');
+            
+            // Clear existing options
+            fromUnit.innerHTML = '';
+            toUnit.innerHTML = '';
+            
+            // Populate with units for selected category
+            const units = Object.keys(conversionData[category]);
+            units.forEach(unit => {
+                fromUnit.innerHTML += `<option value="${unit}">${unit}</option>`;
+                toUnit.innerHTML += `<option value="${unit}">${unit}</option>`;
+            });
+            
+            // Set different default units
+            if (units.length > 1) {
+                toUnit.selectedIndex = 1;
+            }
+            
+            convertUnits();
+        }
+
+        function convertUnits() {
+            const category = document.getElementById('conversionCategory').value;
+            const fromValue = parseFloat(document.getElementById('fromValue').value);
+            const fromUnit = document.getElementById('fromUnit').value;
+            const toUnit = document.getElementById('toUnit').value;
+            const toValueField = document.getElementById('toValue');
+            
+            if (isNaN(fromValue) || !fromUnit || !toUnit) {
+                toValueField.value = '';
+                return;
+            }
+            
+            let result;
+            if (category === 'temperature') {
+                result = convertTemperature(fromValue, fromUnit, toUnit);
+            } else {
+                const fromFactor = conversionData[category][fromUnit];
+                const toFactor = conversionData[category][toUnit];
+                result = fromValue * toFactor / fromFactor;
+            }
+            
+            toValueField.value = result.toFixed(6).replace(/\.?0+$/, '');
+            
+            showConversionSteps(fromValue, fromUnit, toUnit, result, category);
+        }
+
+        function convertTemperature(value, from, to) {
+            // Convert to Celsius first
+            let celsius = value;
+            if (from === 'F') {
+                celsius = (value - 32) * 5/9;
+            } else if (from === 'K') {
+                celsius = value - 273.15;
+            }
+            
+            // Convert from Celsius to target
+            if (to === 'F') {
+                return celsius * 9/5 + 32;
+            } else if (to === 'K') {
+                return celsius + 273.15;
+            }
+            return celsius;
+        }
+
+        function showConversionSteps(fromValue, fromUnit, toUnit, result, category) {
+            const stepsDiv = document.getElementById('conversionSteps');
+            let steps = '';
+            
+            if (category === 'temperature') {
+                steps = getTemperatureSteps(fromValue, fromUnit, toUnit, result);
+            } else {
+                const fromFactor = conversionData[category][fromUnit];
+                const toFactor = conversionData[category][toUnit];
+                const conversionFactor = toFactor / fromFactor;
+                
+                steps = `
+                    <h6>Conversion Steps:</h6>
+                    <div class="step">1. Given: ${fromValue} ${fromUnit}</div>
+                    <div class="step">2. Conversion factor: 1 ${fromUnit} = ${conversionFactor} ${toUnit}</div>
+                    <div class="step">3. Calculation: ${fromValue} × ${conversionFactor} = ${result}</div>
+                    <div class="step">4. Result: ${result} ${toUnit}</div>
+                `;
+            }
+            
+            stepsDiv.innerHTML = steps;
+        }
+
+        function getTemperatureSteps(value, from, to, result) {
+            let steps = '<h6>Temperature Conversion Steps:</h6>';
+            
+            if (from === 'C' && to === 'F') {
+                steps += `
+                    <div class="step">1. Formula: °F = (°C × 9/5) + 32</div>
+                    <div class="step">2. Substitute: °F = (${value} × 9/5) + 32</div>
+                    <div class="step">3. Calculate: °F = ${value * 9/5} + 32 = ${result}</div>
+                `;
+            } else if (from === 'F' && to === 'C') {
+                steps += `
+                    <div class="step">1. Formula: °C = (°F - 32) × 5/9</div>
+                    <div class="step">2. Substitute: °C = (${value} - 32) × 5/9</div>
+                    <div class="step">3. Calculate: °C = ${value - 32} × 5/9 = ${result}</div>
+                `;
+            } else if (from === 'C' && to === 'K') {
+                steps += `
+                    <div class="step">1. Formula: K = °C + 273.15</div>
+                    <div class="step">2. Substitute: K = ${value} + 273.15</div>
+                    <div class="step">3. Calculate: K = ${result}</div>
+                `;
+            } else if (from === 'K' && to === 'C') {
+                steps += `
+                    <div class="step">1. Formula: °C = K - 273.15</div>
+                    <div class="step">2. Substitute: °C = ${value} - 273.15</div>
+                    <div class="step">3. Calculate: °C = ${result}</div>
+                `;
+            }
+            
+            return steps;
+        }
+
+        function swapUnits() {
+            const fromUnit = document.getElementById('fromUnit');
+            const toUnit = document.getElementById('toUnit');
+            const fromValue = document.getElementById('fromValue');
+            const toValue = document.getElementById('toValue');
+            
+            // Swap unit selections
+            const tempUnit = fromUnit.value;
+            fromUnit.value = toUnit.value;
+            toUnit.value = tempUnit;
+            
+            // Swap values
+            const tempValue = fromValue.value;
+            fromValue.value = toValue.value;
+            toValue.value = tempValue;
+            
+            convertUnits();
+        }
+
+        function saveConversion() {
+            const category = document.getElementById('conversionCategory').value;
+            const fromValue = document.getElementById('fromValue').value;
+            const fromUnit = document.getElementById('fromUnit').value;
+            const toValue = document.getElementById('toValue').value;
+            const toUnit = document.getElementById('toUnit').value;
+            
+            if (!fromValue || !toValue) return;
+            
+            const conversion = {
+                timestamp: new Date().toLocaleString(),
+                category: category,
+                from: `${fromValue} ${fromUnit}`,
+                to: `${toValue} ${toUnit}`
+            };
+            
+            conversionHistory.unshift(conversion);
+            if (conversionHistory.length > 20) {
+                conversionHistory.pop();
+            }
+            
+            updateConversionHistory();
+            saveToLocalStorage();
+        }
+
+        function updateConversionHistory() {
+            const historyDiv = document.getElementById('conversionHistory');
+            
+            if (conversionHistory.length === 0) {
+                historyDiv.innerHTML = '<p class="text-muted">No conversions yet. Start converting to see history.</p>';
+                return;
+            }
+            
+            let historyHTML = '';
+            conversionHistory.forEach((conversion, index) => {
+                historyHTML += `
+                    <div class="conversion-history-item mb-2 p-2 border-bottom">
+                        <small class="text-muted">${conversion.timestamp}</small><br>
+                        <strong>${conversion.category}:</strong> ${conversion.from} → ${conversion.to}
+                    </div>
+                `;
+            });
+            
+            historyDiv.innerHTML = historyHTML;
+        }
+
+        function exportHistory() {
+            if (conversionHistory.length === 0) {
+                alert('No conversion history to export.');
+                return;
+            }
+            
+            const csvContent = "data:text/csv;charset=utf-8," + 
+                "Timestamp,Category,From,To\n" +
+                conversionHistory.map(item => 
+                    `"${item.timestamp}","${item.category}","${item.from}","${item.to}"`
+                ).join("\n");
+            
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "conversion_history.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function clearHistory() {
+            if (confirm('Are you sure you want to clear all conversion history?')) {
+                conversionHistory = [];
+                updateConversionHistory();
+                saveToLocalStorage();
+            }
+        }
+
+        // Railway Calculations
+        function updateRailwayInputs() {
+            const calcType = document.getElementById('railwayCalcType').value;
+            const inputsDiv = document.getElementById('railwayInputs');
+            
+            let inputsHTML = '';
+            
+            switch(calcType) {
+                case 'speed':
+                    inputsHTML = `
+                        <div class="mb-3">
+                            <label class="form-label">Speed:</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="trainSpeed" placeholder="Enter speed">
+                                <select class="form-select" id="speedUnit">
+                                    <option value="kmh">km/h</option>
+                                    <option value="ms">m/s</option>
+                                    <option value="mph">mph</option>
+                                </select>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                case 'crossing':
+                    inputsHTML = `
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="form-label">Train Length (m):</label>
+                                <input type="number" class="form-control" id="trainLength" placeholder="Length">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Bridge Length (m):</label>
+                                <input type="number" class="form-control" id="bridgeLength" placeholder="Length">
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <label class="form-label">Train Speed (km/h):</label>
+                            <input type="number" class="form-control" id="crossingSpeed" placeholder="Speed">
+                        </div>
+                    `;
+                    break;
+                case 'signal':
+                    inputsHTML = `
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="form-label">Train Speed (km/h):</label>
+                                <input type="number" class="form-control" id="signalSpeed" placeholder="Speed">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Reaction Time (s):</label>
+                                <input type="number" class="form-control" id="reactionTime" value="2" placeholder="Time">
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <label class="form-label">Braking Distance (m):</label>
+                            <input type="number" class="form-control" id="brakingDistance" placeholder="Distance">
+                        </div>
+                    `;
+                    break;
+            }
+            
+            inputsDiv.innerHTML = inputsHTML;
+        }
+
+        function calculateRailway() {
+            const calcType = document.getElementById('railwayCalcType').value;
+            const resultDiv = document.getElementById('railwayResult');
+            
+            let result = '';
+            
+            switch(calcType) {
+                case 'speed':
+                    result = calculateSpeedConversion();
+                    break;
+                case 'crossing':
+                    result = calculateCrossingTime();
+                    break;
+                case 'signal':
+                    result = calculateSignalDistance();
+                    break;
+            }
+            
+            resultDiv.innerHTML = result;
+        }
+
+        function calculateSpeedConversion() {
+            const speed = parseFloat(document.getElementById('trainSpeed').value);
+            const unit = document.getElementById('speedUnit').value;
+            
+            if (isNaN(speed)) {
+                return '<div class="alert alert-warning">Please enter a valid speed.</div>';
+            }
+            
+            let kmh, ms, mph;
+            
+            switch(unit) {
+                case 'kmh':
+                    kmh = speed;
+                    ms = speed / 3.6;
+                    mph = speed * 0.621371;
+                    break;
+                case 'ms':
+                    kmh = speed * 3.6;
+                    ms = speed;
+                    mph = speed * 2.23694;
+                    break;
+                case 'mph':
+                    kmh = speed * 1.60934;
+                    ms = speed * 0.44704;
+                    mph = speed;
+                    break;
+            }
+            
+            return `
+                <div class="conversion-result">
+                    <h6>Speed Conversion Results</h6>
+                    <p><strong>km/h:</strong> ${kmh.toFixed(2)}</p>
+                    <p><strong>m/s:</strong> ${ms.toFixed(2)}</p>
+                    <p><strong>mph:</strong> ${mph.toFixed(2)}</p>
+                </div>
+            `;
+        }
+
+        function calculateCrossingTime() {
+            const trainLength = parseFloat(document.getElementById('trainLength').value);
+            const bridgeLength = parseFloat(document.getElementById('bridgeLength').value);
+            const speed = parseFloat(document.getElementById('crossingSpeed').value);
+            
+            if (isNaN(trainLength) || isNaN(bridgeLength) || isNaN(speed)) {
+                return '<div class="alert alert-warning">Please enter valid values for all fields.</div>';
+            }
+            
+            const totalDistance = trainLength + bridgeLength;
+            const speedMs = speed / 3.6; // Convert km/h to m/s
+            const time = totalDistance / speedMs;
+            
+            return `
+                <div class="conversion-result">
+                    <h6>Crossing Time Calculation</h6>
+                    <p><strong>Total Distance:</strong> ${totalDistance} m</p>
+                    <p><strong>Speed:</strong> ${speedMs.toFixed(2)} m/s</p>
+                    <p><strong>Crossing Time:</strong> ${time.toFixed(2)} seconds</p>
+                    <p><strong>Crossing Time:</strong> ${(time/60).toFixed(2)} minutes</p>
+                </div>
+            `;
+        }
+
+        function calculateSignalDistance() {
+            const speed = parseFloat(document.getElementById('signalSpeed').value);
+            const reactionTime = parseFloat(document.getElementById('reactionTime').value);
+            const brakingDistance = parseFloat(document.getElementById('brakingDistance').value);
+            
+            if (isNaN(speed) || isNaN(reactionTime) || isNaN(brakingDistance)) {
+                return '<div class="alert alert-warning">Please enter valid values for all fields.</div>';
+            }
+            
+            const speedMs = speed / 3.6; // Convert km/h to m/s
+            const reactionDistance = speedMs * reactionTime;
+            const totalStoppingDistance = reactionDistance + brakingDistance;
+            const signalDistance = totalStoppingDistance * 1.2; // 20% safety margin
+            
+            return `
+                <div class="conversion-result">
+                    <h6>Signal Distance Calculation</h6>
+                    <p><strong>Reaction Distance:</strong> ${reactionDistance.toFixed(2)} m</p>
+                    <p><strong>Braking Distance:</strong> ${brakingDistance} m</p>
+                    <p><strong>Total Stopping Distance:</strong> ${totalStoppingDistance.toFixed(2)} m</p>
+                    <p><strong>Required Signal Distance:</strong> ${signalDistance.toFixed(2)} m</p>
+                    <small class="text-muted">*Includes 20% safety margin</small>
+                </div>
+            `;
+        }
+
+        // Calculator Functions
+        function appendToCalculator(value) {
+            const display = document.getElementById('calculatorDisplay');
+            if (display.textContent === '0') {
+                display.textContent = value;
+            } else {
+                display.textContent += value;
+            }
+        }
+
+        function clearCalculator() {
+            document.getElementById('calculatorDisplay').textContent = '0';
+        }
+
+        function backspace() {
+            const display = document.getElementById('calculatorDisplay');
+            if (display.textContent.length > 1) {
+                display.textContent = display.textContent.slice(0, -1);
+            } else {
+                display.textContent = '0';
+            }
+        }
+
+        function calculateResult() {
+            const display = document.getElementById('calculatorDisplay');
+            const expression = display.textContent.replace(/×/g, '*');
+            
+            try {
+                const result = eval(expression);
+                const calculation = `${display.textContent} = ${result}`;
+                
+                calculatorHistory.unshift(calculation);
+                if (calculatorHistory.length > 20) {
+                    calculatorHistory.pop();
+                }
+                
+                display.textContent = result;
+                updateCalculatorHistory();
+                saveToLocalStorage();
+            } catch (error) {
+                display.textContent = 'Error';
+            }
+        }
+
+        function scientificFunction(func) {
+            const display = document.getElementById('calculatorDisplay');
+            const value = parseFloat(display.textContent);
+            
+            if (isNaN(value)) return;
+            
+            let result;
+            switch(func) {
+                case 'sin':
+                    result = Math.sin(value * Math.PI / 180);
+                    break;
+                case 'cos':
+                    result = Math.cos(value * Math.PI / 180);
+                    break;
+                case 'tan':
+                    result = Math.tan(value * Math.PI / 180);
+                    break;
+                case 'log':
+                    result = Math.log10(value);
+                    break;
+            }
+            
+            if (result !== undefined) {
+                const calculation = `${func}(${value}) = ${result}`;
+                calculatorHistory.unshift(calculation);
+                display.textContent = result.toFixed(8).replace(/\.?0+$/, '');
+                updateCalculatorHistory();
+            }
+        }
+
+        function calculateSquareRoot() {
+            const display = document.getElementById('calculatorDisplay');
+            const value = parseFloat(display.textContent);
+            
+            if (isNaN(value) || value < 0) return;
+            
+            const result = Math.sqrt(value);
+            const calculation = `√${value} = ${result}`;
+            
+            calculatorHistory.unshift(calculation);
+            display.textContent = result.toFixed(8).replace(/\.?0+$/, '');
+            updateCalculatorHistory();
+        }
+
+        function calculatePower() {
+            const display = document.getElementById('calculatorDisplay');
+            const value = parseFloat(display.textContent);
+            
+            if (isNaN(value)) return;
+            
+            const result = value * value;
+            const calculation = `${value}² = ${result}`;
+            
+            calculatorHistory.unshift(calculation);
+            display.textContent = result;
+            updateCalculatorHistory();
+        }
+
+        function memoryFunction(operation) {
+            const display = document.getElementById('calculatorDisplay');
+            const value = parseFloat(display.textContent);
+            
+            switch(operation) {
+                case 'MC':
+                    calculatorMemory = 0;
+                    break;
+                case 'MR':
+                    if (!isNaN(calculatorMemory)) {
+                        display.textContent = calculatorMemory;
+                    }
+                    break;
+                case 'M+':
+                    if (!isNaN(value)) {
+                        calculatorMemory += value;
+                    }
+                    break;
+                case 'M-':
+                    if (!isNaN(value)) {
+                        calculatorMemory -= value;
+                    }
+                    break;
+            }
+        }
+
+        function updateCalculatorHistory() {
+            const historyDiv = document.getElementById('calculatorHistory');
+            
+            if (calculatorHistory.length === 0) {
+                historyDiv.innerHTML = '<p class="text-muted">No calculations yet.</p>';
+                return;
+            }
+            
+            let historyHTML = '';
+            calculatorHistory.forEach(calculation => {
+                historyHTML += `<div class="calculation-item mb-1 p-2 border-bottom small">${calculation}</div>`;
+            });
+            
+            historyDiv.innerHTML = historyHTML;
+        }
+
+        function clearCalculatorHistory() {
+            calculatorHistory = [];
+            updateCalculatorHistory();
+            saveToLocalStorage();
+        }
+
+        // Game Functions
+        let speedGameActive = false;
+        let speedGameTimer = null;
+        let speedGameTimeLeft = 60;
+        let speedGameScore = 0;
+        let speedGameQuestion = null;
+
+        function startSpeedGame() {
+            speedGameActive = true;
+            speedGameTimeLeft = 60;
+            speedGameScore = 0;
+            
+            document.getElementById('startSpeedGame').disabled = true;
+            document.getElementById('speedAnswer').disabled = false;
+            document.getElementById('submitSpeedAnswer').disabled = false;
+            
+            updateSpeedGameDisplay();
+            generateSpeedQuestion();
+            
+            speedGameTimer = setInterval(() => {
+                speedGameTimeLeft--;
+                updateSpeedGameDisplay();
+                
+                if (speedGameTimeLeft <= 0) {
+                    endSpeedGame();
+                }
+            }, 1000);
+        }
+
+        function generateSpeedQuestion() {
+            const categories = Object.keys(conversionData);
+            const category = categories[Math.floor(Math.random() * categories.length)];
+            const units = Object.keys(conversionData[category]);
+            
+            const fromUnit = units[Math.floor(Math.random() * units.length)];
+            let toUnit = units[Math.floor(Math.random() * units.length)];
+            while (toUnit === fromUnit) {
+                toUnit = units[Math.floor(Math.random() * units.length)];
+            }
+            
+            const value = Math.floor(Math.random() * 100) + 1;
+            
+            speedGameQuestion = {
+                value: value,
+                fromUnit: fromUnit,
+                toUnit: toUnit,
+                category: category,
+                answer: convertValue(value, fromUnit, toUnit, category)
+            };
+            
+            document.getElementById('speedQuestion').innerHTML = `
+                <p><strong>Convert:</strong> ${value} ${fromUnit} to ${toUnit}</p>
+            `;
+        }
+
+        function convertValue(value, fromUnit, toUnit, category) {
+            if (category === 'temperature') {
+                return convertTemperature(value, fromUnit, toUnit);
+            } else {
+                const fromFactor = conversionData[category][fromUnit];
+                const toFactor = conversionData[category][toUnit];
+                return value * toFactor / fromFactor;
+            }
+        }
+
+        function submitSpeedAnswer() {
+            const userAnswer = parseFloat(document.getElementById('speedAnswer').value);
+            const correctAnswer = speedGameQuestion.answer;
+            const tolerance = Math.abs(correctAnswer * 0.05); // 5% tolerance
+            
+            if (Math.abs(userAnswer - correctAnswer) <= tolerance) {
+                speedGameScore += 10;
+                gameStats.correctAnswers++;
+                updateAchievements();
+            }
+            
+            gameStats.totalAttempts++;
+            document.getElementById('speedAnswer').value = '';
+            generateSpeedQuestion();
+            updateSpeedGameDisplay();
+        }
+
+        function updateSpeedGameDisplay() {
+            document.getElementById('speedTimer').textContent = `${speedGameTimeLeft}s`;
+            document.getElementById('speedScore').textContent = `Score: ${speedGameScore}`;
+        }
+
+        function endSpeedGame() {
+            speedGameActive = false;
+            clearInterval(speedGameTimer);
+            
+            document.getElementById('startSpeedGame').disabled = false;
+            document.getElementById('speedAnswer').disabled = true;
+            document.getElementById('submitSpeedAnswer').disabled = true;
+            
+            gameStats.totalGames++;
+            gameStats.totalScore += speedGameScore;
+            
+            updateGameStats();
+            saveToLocalStorage();
+            
+            alert(`Game Over! Your score: ${speedGameScore}`);
+        }
+
+        // Master Challenge Game
+        let masterGameActive = false;
+        let masterGameLevel = 1;
+        let masterGameCorrect = 0;
+        let masterGameQuestion = null;
+
+        function startMasterGame() {
+            masterGameActive = true;
+            masterGameLevel = 1;
+            masterGameCorrect = 0;
+            
+            document.getElementById('startMasterGame').disabled = true;
+            document.getElementById('masterFromUnit').disabled = false;
+            document.getElementById('masterAnswer').disabled = false;
+            document.getElementById('submitMasterAnswer').disabled = false;
+            
+            generateMasterQuestion();
+            updateMasterGameDisplay();
+        }
+
+        function generateMasterQuestion() {
+            const category = 'length'; // Start with length for simplicity
+            const units = Object.keys(conversionData[category]);
+            
+            const fromUnit = units[Math.floor(Math.random() * units.length)];
+            const value = Math.floor(Math.random() * 100) + 1;
+            
+            masterGameQuestion = {
+                value: value,
+                fromUnit: fromUnit,
+                category: category
+            };
+            
+            // Populate unit options
+            const select = document.getElementById('masterFromUnit');
+            select.innerHTML = '';
+            units.forEach(unit => {
+                select.innerHTML += `<option value="${unit}">${unit}</option>`;
+            });
+            
+            document.getElementById('masterQuestion').innerHTML = `
+                <p><strong>Convert ${value} ${fromUnit} to the selected unit:</strong></p>
+            `;
+        }
+
+        function submitMasterAnswer() {
+            const toUnit = document.getElementById('masterFromUnit').value;
+            const userAnswer = parseFloat(document.getElementById('masterAnswer').value);
+            const correctAnswer = convertValue(masterGameQuestion.value, masterGameQuestion.fromUnit, toUnit, masterGameQuestion.category);
+            const tolerance = Math.abs(correctAnswer * 0.05);
+            
+            if (Math.abs(userAnswer - correctAnswer) <= tolerance) {
+                masterGameCorrect++;
+                
+                if (masterGameCorrect >= 5) {
+                    masterGameLevel++;
+                    masterGameCorrect = 0;
+                    alert(`Level ${masterGameLevel} unlocked!`);
+                }
+            }
+            
+            document.getElementById('masterAnswer').value = '';
+            generateMasterQuestion();
+            updateMasterGameDisplay();
+        }
+
+        function updateMasterGameDisplay() {
+            document.getElementById('masterScore').textContent = `Level: ${masterGameLevel}`;
+        }
+
+        function updateAchievements() {
+            // Update achievement progress based on game stats
+            const accuracy = gameStats.totalAttempts > 0 ? (gameStats.correctAnswers / gameStats.totalAttempts * 100) : 0;
+            
+            // Update progress bar
+            const progress = Math.min(100, (gameStats.totalGames * 10));
+            document.getElementById('gameProgress').style.width = `${progress}%`;
+            
+            // Unlock achievements
+            const achievements = document.querySelectorAll('.achievement-badge');
+            
+            if (gameStats.totalGames >= 1) achievements[1].style.opacity = '1'; // Speed Demon
+            if (gameStats.totalGames >= 5) achievements[2].style.opacity = '1'; // Conversion Master
+            if (accuracy >= 90) achievements[3].style.opacity = '1'; // Perfect Score
+            if (gameStats.totalScore >= 100) achievements[4].style.opacity = '1'; // Time Master
+            if (gameStats.totalGames >= 10) achievements[5].style.opacity = '1'; // Unit Guru
+        }
+
+        function updateGameStats() {
+            document.getElementById('totalGames').textContent = gameStats.totalGames;
+            document.getElementById('totalScore').textContent = gameStats.totalScore;
+            
+            const accuracy = gameStats.totalAttempts > 0 ? (gameStats.correctAnswers / gameStats.totalAttempts * 100) : 0;
+            document.getElementById('accuracy').textContent = `${accuracy.toFixed(1)}%`;
+        }
+
+        // Formula Functions
+        function loadFormulas() {
+            displayFormulas(formulaData);
+        }
+
+        function displayFormulas(formulas) {
+            const formulaList = document.getElementById('formulaList');
+            let formulasHTML = '';
+            
+            formulas.forEach(formula => {
+                const isFavorite = favoriteFormulas.includes(formula.id);
+                formulasHTML += `
+                    <div class="formula-card" data-category="${formula.category}">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="formula-title">${formula.title}</div>
+                            <button class="btn btn-outline-light btn-sm" onclick="toggleFavoriteFormula(${formula.id})">
+                                <i class="bi ${isFavorite ? 'bi-star-fill' : 'bi-star'}"></i>
+                            </button>
+                        </div>
+                        <div class="formula-expression">${formula.formula}</div>
+                        <small>${formula.description}</small><br>
+                        <small class="text-muted">${formula.variables}</small>
+                        <div class="mt-2">
+                            <button class="btn btn-outline-light btn-sm" onclick="copyFormula('${formula.formula}')">
+                                <i class="bi bi-clipboard"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            formulaList.innerHTML = formulasHTML;
+        }
+
+        function searchFormulas() {
+            const searchTerm = document.getElementById('formulaSearch').value.toLowerCase();
+            const category = document.getElementById('formulaCategory').value;
+            
+            let filteredFormulas = formulaData;
+            
+            if (category) {
+                filteredFormulas = filteredFormulas.filter(formula => formula.category === category);
+            }
+            
+            if (searchTerm) {
+                filteredFormulas = filteredFormulas.filter(formula => 
+                    formula.title.toLowerCase().includes(searchTerm) ||
+                    formula.formula.toLowerCase().includes(searchTerm) ||
+                    formula.description.toLowerCase().includes(searchTerm)
+                );
+            }
+            
+            displayFormulas(filteredFormulas);
+        }
+
+        function filterFormulas() {
+            searchFormulas();
+        }
+
+        function toggleFavoriteFormula(formulaId) {
+            if (favoriteFormulas.includes(formulaId)) {
+                favoriteFormulas = favoriteFormulas.filter(id => id !== formulaId);
+            } else {
+                favoriteFormulas.push(formulaId);
+            }
+            
+            updateFavoriteFormulas();
+            loadFormulas();
+            saveToLocalStorage();
+        }
+
+        function updateFavoriteFormulas() {
+            const favoriteDiv = document.getElementById('favoriteFormulas');
+            
+            if (favoriteFormulas.length === 0) {
+                favoriteDiv.innerHTML = '<p class="text-muted">No favorite formulas yet. Click the star icon next to formulas to add them here.</p>';
+                return;
+            }
+            
+            const favorites = formulaData.filter(formula => favoriteFormulas.includes(formula.id));
+            let favoritesHTML = '';
+            
+            favorites.forEach(formula => {
+                favoritesHTML += `
+                    <div class="mb-2 p-2 border rounded">
+                        <strong>${formula.title}</strong><br>
+                        <code>${formula.formula}</code>
+                    </div>
+                `;
+            });
+            
+            favoriteDiv.innerHTML = favoritesHTML;
+        }
+
+        function copyFormula(formula) {
+            navigator.clipboard.writeText(formula).then(() => {
+                // Show temporary success message
+                const btn = event.target.closest('button');
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<i class="bi bi-check"></i> Copied!';
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                }, 2000);
+            });
+        }
+
+        // Concept Functions
+        function searchConcepts() {
+            const searchTerm = document.getElementById('conceptSearch').value.toLowerCase();
+            const sections = document.querySelectorAll('.concept-section');
+            
+            sections.forEach(section => {
+                const text = section.textContent.toLowerCase();
+                if (text.includes(searchTerm) || searchTerm === '') {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+
+        function scrollToConcept(topic) {
+            const section = document.querySelector(`[data-topic="${topic}"]`);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // MCQ Functions
+        let currentMCQSet = [];
+        let currentMCQIndex = 0;
+        let mcqScore = { correct: 0, incorrect: 0 };
+
+        function loadMCQs() {
+            const difficulty = document.getElementById('mcqDifficulty').value;
+            currentMCQSet = [...mcqData[difficulty]];
+            currentMCQIndex = 0;
+            mcqScore = { correct: 0, incorrect: 0 };
+            
+            updateMCQDisplay();
+            createQuestionNavigator();
+        }
+
+        function updateMCQDisplay() {
+            if (currentMCQSet.length === 0) return;
+            
+            const mcq = currentMCQSet[currentMCQIndex];
+            const questionDiv = document.getElementById('mcqQuestion');
+            
+            let optionsHTML = '';
+            mcq.options.forEach((option, index) => {
+                optionsHTML += `
+                    <div class="mcq-option" onclick="selectMCQOption(${index})" data-option="${index}">
+                        ${String.fromCharCode(65 + index)}. ${option}
+                    </div>
+                `;
+            });
+            
+            questionDiv.innerHTML = `
+                <h5>Question ${currentMCQIndex + 1}</h5>
+                <p>${mcq.question}</p>
+                <div class="mcq-options">
+                    ${optionsHTML}
+                </div>
+            `;
+            
+            document.getElementById('currentQuestion').textContent = currentMCQIndex + 1;
+            document.getElementById('totalQuestions').textContent = currentMCQSet.length;
+            
+            updateMCQProgress();
+        }
+
+        function selectMCQOption(optionIndex) {
+            const options = document.querySelectorAll('.mcq-option');
+            options.forEach(option => option.classList.remove('selected'));
+            options[optionIndex].classList.add('selected');
+            
+            // Store the selected answer
+            currentMCQSet[currentMCQIndex].selectedAnswer = optionIndex;
+        }
+
+        function submitMCQAnswer() {
+            const mcq = currentMCQSet[currentMCQIndex];
+            if (mcq.selectedAnswer === undefined) {
+                alert('Please select an answer before submitting.');
+                return;
+            }
+            
+            const options = document.querySelectorAll('.mcq-option');
+            
+            // Show correct answer
+            options[mcq.correct].classList.add('correct');
+            
+            // Show incorrect if wrong answer selected
+            if (mcq.selectedAnswer !== mcq.correct) {
+                options[mcq.selectedAnswer].classList.add('incorrect');
+                mcqScore.incorrect++;
+            } else {
+                mcqScore.correct++;
+            }
+            
+            // Update score display
+            document.getElementById('mcqCorrect').textContent = mcqScore.correct;
+            document.getElementById('mcqIncorrect').textContent = mcqScore.incorrect;
+            
+            // Disable further selection
+            options.forEach(option => option.style.pointerEvents = 'none');
+        }
+
+        function nextMCQ() {
+            if (currentMCQIndex < currentMCQSet.length - 1) {
+                currentMCQIndex++;
+                updateMCQDisplay();
+                hideExplanation();
+            } else {
+                alert(`Quiz completed! Score: ${mcqScore.correct}/${currentMCQSet.length}`);
+            }
+        }
+
+        function showExplanation() {
+            const mcq = currentMCQSet[currentMCQIndex];
+            const explanationDiv = document.getElementById('mcqExplanation');
+            
+            explanationDiv.innerHTML = `
+                <div class="alert alert-info">
+                    <h6>Explanation:</h6>
+                    <p>${mcq.explanation}</p>
+                </div>
+            `;
+            explanationDiv.style.display = 'block';
+        }
+
+        function hideExplanation() {
+            document.getElementById('mcqExplanation').style.display = 'none';
+        }
+
+        function updateMCQProgress() {
+            const progress = ((currentMCQIndex + 1) / currentMCQSet.length) * 100;
+            document.getElementById('mcqProgress').style.width = `${progress}%`;
+            document.getElementById('mcqProgressText').textContent = `${progress.toFixed(0)}%`;
+        }
+
+        function createQuestionNavigator() {
+            const navigator = document.getElementById('questionNavigator');
+            let navHTML = '';
+            
+            for (let i = 0; i < currentMCQSet.length; i++) {
+                navHTML += `
+                    <button class="btn btn-outline-primary btn-sm" onclick="goToMCQQuestion(${i})">
+                        ${i + 1}
+                    </button>
+                `;
+            }
+            
+            navigator.innerHTML = navHTML;
+        }
+
+        function goToMCQQuestion(index) {
+            currentMCQIndex = index;
+            updateMCQDisplay();
+            hideExplanation();
+        }
+
+        // Problem Solver Functions
+        function updateProblemInputs() {
+            const problemType = document.getElementById('problemType').value;
+            const inputsDiv = document.getElementById('problemInputs');
+            
+            let inputsHTML = '';
+            
+            switch(problemType) {
+                case 'unit-conversion':
+                    inputsHTML = `
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="form-label">Value:</label>
+                                <input type="number" class="form-control" id="convValue" placeholder="Enter value">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">From Unit:</label>
+                                <input type="text" class="form-control" id="convFromUnit" placeholder="e.g., m">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">To Unit:</label>
+                                <input type="text" class="form-control" id="convToUnit" placeholder="e.g., cm">
+                            </div>
+                        </div>
+                    `;
+                    break;
+                case 'dimensional-analysis':
+                    inputsHTML = `
+                        <div class="mb-3">
+                            <label class="form-label">Physical Quantity:</label>
+                            <input type="text" class="form-control" id="dimQuantity" placeholder="e.g., Force">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Given Formula:</label>
+                            <input type="text" class="form-control" id="dimFormula" placeholder="e.g., F = ma">
+                        </div>
+                    `;
+                    break;
+                case 'significant-figures':
+                    inputsHTML = `
+                        <div class="mb-3">
+                            <label class="form-label">Number:</label>
+                            <input type="text" class="form-control" id="sigNumber" placeholder="e.g., 123.4500">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Operation:</label>
+                            <select class="form-select" id="sigOperation">
+                                <option value="count">Count Significant Figures</option>
+                                <option value="round">Round to Significant Figures</option>
+                            </select>
+                        </div>
+                    `;
+                    break;
+                case 'error-calculation':
+                    inputsHTML = `
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="form-label">Measured Value:</label>
+                                <input type="number" class="form-control" id="measuredValue" placeholder="Measured">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">True Value:</label>
+                                <input type="number" class="form-control" id="trueValue" placeholder="True">
+                            </div>
+                        </div>
+                    `;
+                    break;
+            }
+            
+            inputsDiv.innerHTML = inputsHTML;
+        }
+
+        function solveProblem() {
+            const problemType = document.getElementById('problemType').value;
+            const solutionDiv = document.getElementById('problemSolution');
+            
+            let solution = '';
+            
+            switch(problemType) {
+                case 'unit-conversion':
+                    solution = solveUnitConversion();
+                    break;
+                case 'dimensional-analysis':
+                    solution = solveDimensionalAnalysis();
+                    break;
+                case 'significant-figures':
+                    solution = solveSignificantFigures();
+                    break;
+                case 'error-calculation':
+                    solution = solveErrorCalculation();
+                    break;
+            }
+            
+            solutionDiv.innerHTML = solution;
+        }
+
+        function solveUnitConversion() {
+            const value = parseFloat(document.getElementById('convValue').value);
+            const fromUnit = document.getElementById('convFromUnit').value.trim();
+            const toUnit = document.getElementById('convToUnit').value.trim();
+            
+            if (isNaN(value) || !fromUnit || !toUnit) {
+                return '<div class="alert alert-warning">Please enter all required values.</div>';
+            }
+            
+            return `
+                <div class="alert alert-info">
+                    <h6>Unit Conversion Solution</h6>
+                    <p><strong>Given:</strong> ${value} ${fromUnit}</p>
+                    <p><strong>Convert to:</strong> ${toUnit}</p>
+                    <p><strong>Step 1:</strong> Identify the conversion factor between ${fromUnit} and ${toUnit}</p>
+                    <p><strong>Step 2:</strong> Apply the conversion factor</p>
+                    <p><strong>Step 3:</strong> Calculate the result</p>
+                    <p><em>Note: Use the converter tool for exact calculations with built-in conversion factors.</em></p>
+                </div>
+            `;
+        }
+
+        function solveDimensionalAnalysis() {
+            const quantity = document.getElementById('dimQuantity').value.trim();
+            const formula = document.getElementById('dimFormula').value.trim();
+            
+            if (!quantity || !formula) {
+                return '<div class="alert alert-warning">Please enter both quantity and formula.</div>';
+            }
+            
+            return `
+                <div class="alert alert-info">
+                    <h6>Dimensional Analysis Solution</h6>
+                    <p><strong>Quantity:</strong> ${quantity}</p>
+                    <p><strong>Formula:</strong> ${formula}</p>
+                    <p><strong>Step 1:</strong> Identify the dimensions of each variable in the formula</p>
+                    <p><strong>Step 2:</strong> Express each dimension in terms of M, L, T</p>
+                    <p><strong>Step 3:</strong> Combine the dimensions according to the formula</p>
+                    <p><strong>Step 4:</strong> Simplify to get the final dimension</p>
+                    <p><em>Use the MLT Calculator for detailed dimensional analysis.</em></p>
+                </div>
+            `;
+        }
+
+        function solveSignificantFigures() {
+            const number = document.getElementById('sigNumber').value.trim();
+            const operation = document.getElementById('sigOperation').value;
+            
+            if (!number) {
+                return '<div class="alert alert-warning">Please enter a number.</div>';
+            }
+            
+            const sigFigs = countSignificantFigures(number);
+            
+            return `
+                <div class="alert alert-info">
+                    <h6>Significant Figures Solution</h6>
+                    <p><strong>Number:</strong> ${number}</p>
+                    <p><strong>Significant Figures:</strong> ${sigFigs}</p>
+                    <p><strong>Rules Applied:</strong></p>
+                    <ul>
+                        <li>All non-zero digits are significant</li>
+                        <li>Zeros between non-zero digits are significant</li>
+                        <li>Leading zeros are not significant</li>
+                        <li>Trailing zeros after decimal point are significant</li>
+                    </ul>
+                </div>
+            `;
+        }
+
+        function countSignificantFigures(number) {
+            // Simple significant figures counter
+            const numStr = number.toString().replace(/^0+/, ''); // Remove leading zeros
+            const hasDecimal = numStr.includes('.');
+            
+            if (hasDecimal) {
+                return numStr.replace('.', '').length;
+            } else {
+                return numStr.replace(/0+$/, '').length; // Remove trailing zeros if no decimal
+            }
+        }
+
+        function solveErrorCalculation() {
+            const measured = parseFloat(document.getElementById('measuredValue').value);
+            const trueVal = parseFloat(document.getElementById('trueValue').value);
+            
+            if (isNaN(measured) || isNaN(trueVal)) {
+                return '<div class="alert alert-warning">Please enter both measured and true values.</div>';
+            }
+            
+            const absoluteError = Math.abs(measured - trueVal);
+            const relativeError = (absoluteError / Math.abs(trueVal)) * 100;
+            
+            return `
+                <div class="alert alert-info">
+                    <h6>Error Calculation Solution</h6>
+                    <p><strong>Measured Value:</strong> ${measured}</p>
+                    <p><strong>True Value:</strong> ${trueVal}</p>
+                    <p><strong>Absolute Error:</strong> |${measured} - ${trueVal}| = ${absoluteError.toFixed(4)}</p>
+                    <p><strong>Relative Error:</strong> (${absoluteError.toFixed(4)} / ${Math.abs(trueVal)}) × 100% = ${relativeError.toFixed(2)}%</p>
+                    <p><strong>Percentage Error:</strong> ${relativeError.toFixed(2)}%</p>
+                </div>
+            `;
+        }
+
+        function generateRandomProblem() {
+            const problemTypes = ['unit-conversion', 'dimensional-analysis', 'significant-figures', 'error-calculation'];
+            const randomType = problemTypes[Math.floor(Math.random() * problemTypes.length)];
+            
+            document.getElementById('problemType').value = randomType;
+            updateProblemInputs();
+            
+            // Auto-fill with random values based on type
+            setTimeout(() => {
+                switch(randomType) {
+                    case 'unit-conversion':
+                        document.getElementById('convValue').value = Math.floor(Math.random() * 100) + 1;
+                        document.getElementById('convFromUnit').value = 'm';
+                        document.getElementById('convToUnit').value = 'cm';
+                        break;
+                    case 'dimensional-analysis':
+                        document.getElementById('dimQuantity').value = 'Force';
+                        document.getElementById('dimFormula').value = 'F = ma';
+                        break;
+                    case 'significant-figures':
+                        document.getElementById('sigNumber').value = '123.4500';
+                        break;
+                    case 'error-calculation':
+                        document.getElementById('measuredValue').value = 9.8;
+                        document.getElementById('trueValue').value = 9.81;
+                        break;
+                }
+            }, 100);
+        }
+
+        function generatePracticeProblems() {
+            const problemsList = document.getElementById('practiceProblemsList');
+            
+            const practiceProblems = [
+                {
+                    title: "Speed Conversion",
+                    description: "Convert 72 km/h to m/s",
+                    difficulty: "Easy"
+                },
+                {
+                    title: "Force Calculation",
+                    description: "Find the dimensional formula for force given F = ma",
+                    difficulty: "Medium"
+                },
+                {
+                    title: "Error Analysis",
+                    description: "Calculate percentage error when measured value is 9.8 and true value is 9.81",
+                    difficulty: "Easy"
+                },
+                {
+                    title: "Volume Conversion",
+                    description: "Convert 2.5 cubic meters to liters",
+                    difficulty: "Medium"
+                },
+                {
+                    title: "Pressure Units",
+                    description: "Express pressure in terms of fundamental units",
+                    difficulty: "Hard"
+                },
+                {
+                    title: "Significant Figures",
+                    description: "Find the number of significant figures in 0.00450",
+                    difficulty: "Easy"
+                }
+            ];
+            
+            let problemsHTML = '';
+            practiceProblems.forEach((problem, index) => {
+                const badgeClass = problem.difficulty === 'Easy' ? 'success' : 
+                                 problem.difficulty === 'Medium' ? 'warning' : 'danger';
+                
+                problemsHTML += `
+                    <div class="col-md-6 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <h6 class="card-title">${problem.title}</h6>
+                                    <span class="badge bg-${badgeClass}">${problem.difficulty}</span>
+                                </div>
+                                <p class="card-text">${problem.description}</p>
+                                <button class="btn btn-primary btn-sm" onclick="solvePracticeProblem(${index})">
+                                    Solve
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            problemsList.innerHTML = problemsHTML;
+        }
+
+        function solvePracticeProblem(index) {
+            // Switch to appropriate tool based on problem type
+            const problemTypes = ['converter', 'mlt', 'solver', 'converter', 'mlt', 'solver'];
+            const targetTab = problemTypes[index];
+            
+            // Activate the appropriate tab
+            document.querySelector(`#${targetTab}-tab`).click();
+        }
+
+        // Practice Test Functions
+        let testQuestions = [];
+        let testAnswers = [];
+        let testCurrentQuestion = 0;
+        let testTimer = null;
+        let testTimeLeft = 0;
+
+        function startPracticeTest() {
+            const duration = parseInt(document.getElementById('testDuration').value);
+            const numQuestions = parseInt(document.getElementById('testQuestions').value);
+            
+            testTimeLeft = duration * 60; // Convert to seconds
+            testCurrentQuestion = 0;
+            testAnswers = new Array(numQuestions);
+            
+            // Generate test questions from MCQ data
+            testQuestions = generateTestQuestions(numQuestions);
+            
+            document.getElementById('testSetup').style.display = 'none';
+            document.getElementById('testInterface').style.display = 'block';
+            
+            document.getElementById('testTotalQ').textContent = numQuestions;
+            
+            setupTestQuestionPanel();
+            displayTestQuestion();
+            startTestTimer();
+        }
+
+        function generateTestQuestions(numQuestions) {
+            const allQuestions = [...mcqData.easy, ...mcqData.medium, ...mcqData.hard];
+            const shuffled = allQuestions.sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, numQuestions);
+        }
+
+        function setupTestQuestionPanel() {
+            const panel = document.getElementById('testQuestionPanel');
+            let panelHTML = '<div class="row">';
+            
+            for (let i = 0; i < testQuestions.length; i++) {
+                const status = testAnswers[i] !== undefined ? 'answered' : 
+                             i === testCurrentQuestion ? 'current' : 'unanswered';
+                const btnClass = status === 'answered' ? 'success' : 
+                               status === 'current' ? 'primary' : 'outline-secondary';
+                
+                panelHTML += `
+                    <div class="col-3 mb-2">
+                        <button class="btn btn-${btnClass} btn-sm w-100" onclick="goToTestQuestion(${i})">
+                            ${i + 1}
+                        </button>
+                    </div>
+                `;
+                
+                if ((i + 1) % 4 === 0) panelHTML += '</div><div class="row">';
+            }
+            
+            panelHTML += '</div>';
+            panel.innerHTML = panelHTML;
+        }
+
+        function displayTestQuestion() {
+            if (testCurrentQuestion >= testQuestions.length) return;
+            
+            const question = testQuestions[testCurrentQuestion];
+            const questionDiv = document.getElementById('testQuestion');
+            
+            let optionsHTML = '';
+            question.options.forEach((option, index) => {
+                const isSelected = testAnswers[testCurrentQuestion] === index;
+                optionsHTML += `
+                    <div class="mcq-option ${isSelected ? 'selected' : ''}" onclick="selectTestAnswer(${index})">
+                        ${String.fromCharCode(65 + index)}. ${option}
+                    </div>
+                `;
+            });
+            
+            questionDiv.innerHTML = `
+                <h5>Question ${testCurrentQuestion + 1}</h5>
+                <p>${question.question}</p>
+                <div class="mcq-options">
+                    ${optionsHTML}
+                </div>
+            `;
+            
+            document.getElementById('testCurrentQ').textContent = testCurrentQuestion + 1;
+        }
+
+        function selectTestAnswer(optionIndex) {
+            testAnswers[testCurrentQuestion] = optionIndex;
+            
+            const options = document.querySelectorAll('#testQuestion .mcq-option');
+            options.forEach(option => option.classList.remove('selected'));
+            options[optionIndex].classList.add('selected');
+            
+            setupTestQuestionPanel(); // Update question panel
+        }
+
+        function nextTestQuestion() {
+            if (testCurrentQuestion < testQuestions.length - 1) {
+                testCurrentQuestion++;
+                displayTestQuestion();
+                setupTestQuestionPanel();
+            }
+        }
+
+        function goToTestQuestion(index) {
+            testCurrentQuestion = index;
+            displayTestQuestion();
+            setupTestQuestionPanel();
+        }
+
+        function markForReview() {
+            // Add review functionality
+            const reviewBtn = event.target;
+            reviewBtn.textContent = reviewBtn.textContent.includes('Marked') ? 'Mark for Review' : 'Marked for Review';
+        }
+
+        function startTestTimer() {
+            testTimer = setInterval(() => {
+                testTimeLeft--;
+                updateTestTimer();
+                
+                if (testTimeLeft <= 0) {
+                    submitTest();
+                }
+            }, 1000);
+        }
+
+        function updateTestTimer() {
+            const minutes = Math.floor(testTimeLeft / 60);
+            const seconds = testTimeLeft % 60;
+            document.getElementById('testTimer').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function submitTest() {
+            clearInterval(testTimer);
+            
+            // Calculate results
+            let correct = 0;
+            testQuestions.forEach((question, index) => {
+                if (testAnswers[index] === question.correct) {
+                    correct++;
+                }
+            });
+            
+            const percentage = (correct / testQuestions.length) * 100;
+            
+            document.getElementById('testInterface').style.display = 'none';
+            document.getElementById('testResults').style.display = 'block';
+            
+            document.getElementById('testResults').innerHTML = `
+                <div class="text-center">
+                    <h3>Test Results</h3>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h1 class="text-${percentage >= 70 ? 'success' : 'danger'}">${percentage.toFixed(1)}%</h1>
+                                    <p>You scored ${correct} out of ${testQuestions.length}</p>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar bg-${percentage >= 70 ? 'success' : 'danger'}" 
+                                             style="width: ${percentage}%"></div>
+                                    </div>
+                                    <p class="text-muted">
+                                        ${percentage >= 90 ? 'Excellent!' : 
+                                          percentage >= 70 ? 'Good job!' : 
+                                          percentage >= 50 ? 'Keep practicing!' : 'Need more study!'}
+                                    </p>
+                                    <button class="btn btn-primary" onclick="reviewTestAnswers()">
+                                        Review Answers
+                                    </button>
+                                    <button class="btn btn-secondary ms-2" onclick="restartTest()">
+                                        Take Again
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function reviewTestAnswers() {
+            // Show detailed answer review
+            let reviewHTML = '<h4>Answer Review</h4>';
+            
+            testQuestions.forEach((question, index) => {
+                const userAnswer = testAnswers[index];
+                const isCorrect = userAnswer === question.correct;
+                
+                reviewHTML += `
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h6>Question ${index + 1}</h6>
+                            <p>${question.question}</p>
+                            <p><strong>Your Answer:</strong> 
+                                <span class="text-${isCorrect ? 'success' : 'danger'}">
+                                    ${userAnswer !== undefined ? question.options[userAnswer] : 'Not answered'}
+                                </span>
+                            </p>
+                            <p><strong>Correct Answer:</strong> 
+                                <span class="text-success">${question.options[question.correct]}</span>
+                            </p>
+                            <p><small class="text-muted">${question.explanation}</small></p>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            document.getElementById('testResults').innerHTML = reviewHTML;
+        }
+
+        function restartTest() {
+            document.getElementById('testResults').style.display = 'none';
+            document.getElementById('testSetup').style.display = 'block';
+        }
+
+        // PDF Functions
+        function loadPDF() {
+            const fileInput = document.getElementById('pdfUpload');
+            const file = fileInput.files[0];
+            
+            if (file && file.type === 'application/pdf') {
+                const fileURL = URL.createObjectURL(file);
+                displayPDF(fileURL);
+            } else {
+                alert('Please select a valid PDF file.');
+            }
+        }
+
+        function displayPDF(url) {
+            const viewer = document.getElementById('pdfViewer');
+            viewer.innerHTML = `
+                <iframe src="${url}" width="100%" height="100%" style="border: none;">
+                    Your browser does not support PDF viewing. 
+                    <a href="${url}" target="_blank">Click here to open the PDF</a>
+                </iframe>
+            `;
+        }
+
+        function loadSamplePDF(type) {
+            const viewer = document.getElementById('pdfViewer');
+            let content = '';
+            
+            switch(type) {
+                case 'units':
+                    content = `
+                        <div class="p-4">
+                            <h4>Units & Measurements Study Guide</h4>
+                            <h5>Fundamental Units (SI System)</h5>
+                            <ul>
+                                <li><strong>Length:</strong> meter (m)</li>
+                                <li><strong>Mass:</strong> kilogram (kg)</li>
+                                <li><strong>Time:</strong> second (s)</li>
+                                <li><strong>Electric Current:</strong> ampere (A)</li>
+                                <li><strong>Temperature:</strong> kelvin (K)</li>
+                                <li><strong>Amount of Substance:</strong> mole (mol)</li>
+                                <li><strong>Luminous Intensity:</strong> candela (cd)</li>
+                            </ul>
+                            <h5>Common Derived Units</h5>
+                            <ul>
+                                <li><strong>Force:</strong> Newton (N) = kg⋅m⋅s⁻²</li>
+                                <li><strong>Energy:</strong> Joule (J) = kg⋅m²⋅s⁻²</li>
+                                <li><strong>Power:</strong> Watt (W) = kg⋅m²⋅s⁻³</li>
+                                <li><strong>Pressure:</strong> Pascal (Pa) = kg⋅m⁻¹⋅s⁻²</li>
+                            </ul>
+                        </div>
+                    `;
+                    break;
+                case 'conversion':
+                    content = `
+                        <div class="p-4">
+                            <h4>Quick Conversion Reference</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>Length</h5>
+                                    <ul>
+                                        <li>1 km = 1000 m</li>
+                                        <li>1 m = 100 cm</li>
+                                        <li>1 cm = 10 mm</li>
+                                        <li>1 inch = 2.54 cm</li>
+                                        <li>1 foot = 30.48 cm</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>Mass</h5>
+                                    <ul>
+                                        <li>1 kg = 1000 g</li>
+                                        <li>1 g = 1000 mg</li>
+                                        <li>1 ton = 1000 kg</li>
+                                        <li>1 pound = 0.4536 kg</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                case 'formulas':
+                    content = `
+                        <div class="p-4">
+                            <h4>Essential Formulas</h4>
+                            <div class="formula-card">
+                                <h5>Speed and Velocity</h5>
+                                <p>v = d/t</p>
+                                <p>where v = velocity, d = distance, t = time</p>
+                            </div>
+                            <div class="formula-card">
+                                <h5>Force</h5>
+                                <p>F = ma</p>
+                                <p>where F = force, m = mass, a = acceleration</p>
+                            </div>
+                            <div class="formula-card">
+                                <h5>Pressure</h5>
+                                <p>P = F/A</p>
+                                <p>where P = pressure, F = force, A = area</p>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                case 'practice':
+                    content = `
+                        <div class="p-4">
+                            <h4>Practice Problems</h4>
+                            <div class="mb-4">
+                                <h5>Problem 1:</h5>
+                                <p>Convert 72 km/h to m/s.</p>
+                                <p><strong>Solution:</strong> 72 km/h = 72 × (1000/3600) m/s = 20 m/s</p>
+                            </div>
+                            <div class="mb-4">
+                                <h5>Problem 2:</h5>
+                                <p>Find the dimensional formula for power.</p>
+                                <p><strong>Solution:</strong> Power = Energy/Time = [ML²T⁻²]/[T] = [ML²T⁻³]</p>
+                            </div>
+                            <div class="mb-4">
+                                <h5>Problem 3:</h5>
+                                <p>Calculate the number of significant figures in 0.00450.</p>
+                                <p><strong>Solution:</strong> 3 significant figures (4, 5, and the trailing 0)</p>
+                            </div>
+                        </div>
+                    `;
+                    break;
+            }
+            
+            viewer.innerHTML = content;
+        }
+
+        function zoomIn() {
+            const iframe = document.querySelector('#pdfViewer iframe');
+            if (iframe) {
+                iframe.style.transform = 'scale(1.2)';
+            }
+        }
+
+        function zoomOut() {
+            const iframe = document.querySelector('#pdfViewer iframe');
+            if (iframe) {
+                iframe.style.transform = 'scale(0.8)';
+            }
+        }
+
+        function downloadPDF() {
+            const fileInput = document.getElementById('pdfUpload');
+            if (fileInput.files[0]) {
+                const url = URL.createObjectURL(fileInput.files[0]);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = fileInput.files[0].name;
+                a.click();
+            } else {
+                alert('No PDF file loaded to download.');
+            }
+        }
+
+        // Utility Functions
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const btn = event.target;
+            const isDark = document.body.classList.contains('dark-mode');
+            btn.innerHTML = isDark ? '<i class="bi bi-sun-fill"></i> Light Mode' : '<i class="bi bi-moon-fill"></i> Dark Mode';
+            
+            // Save preference
+            localStorage.setItem('darkMode', isDark);
+        }
+
+        function saveToLocalStorage() {
+            const data = {
+                conversionHistory: conversionHistory,
+                calculatorHistory: calculatorHistory,
+                gameStats: gameStats,
+                favoriteFormulas: favoriteFormulas,
+                darkMode: document.body.classList.contains('dark-mode')
+            };
+            
+            localStorage.setItem('rrbStudyTool', JSON.stringify(data));
+        }
+
+        function loadFromLocalStorage() {
+            try {
+                const data = JSON.parse(localStorage.getItem('rrbStudyTool'));
+                if (data) {
+                    conversionHistory = data.conversionHistory || [];
+                    calculatorHistory = data.calculatorHistory || [];
+                    gameStats = data.gameStats || { totalGames: 0, totalScore: 0, bestTime: null, correctAnswers: 0, totalAttempts: 0 };
+                    favoriteFormulas = data.favoriteFormulas || [];
+                    
+                    if (data.darkMode) {
+                        document.body.classList.add('dark-mode');
+                        const btn = document.querySelector('[onclick="toggleDarkMode()"]');
+                        if (btn) btn.innerHTML = '<i class="bi bi-sun-fill"></i> Light Mode';
+                    }
+                    
+                    updateConversionHistory();
+                    updateCalculatorHistory();
+                    updateGameStats();
+                    updateFavoriteFormulas();
+                }
+            } catch (error) {
+                console.log('Error loading from localStorage:', error);
+            }
+        }
+
+        // Initialize tooltips and other Bootstrap components
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Bootstrap tooltips
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+
+        // Auto-save periodically
+        setInterval(saveToLocalStorage, 30000); // Save every 30 seconds
+
+        // Handle page unload
+        window.addEventListener('beforeunload', function() {
+            saveToLocalStorage();
+        });
+
+        // Print optimization
+        window.addEventListener('beforeprint', function() {
+            // Hide navigation and non-essential elements for printing
+            document.querySelector('.nav-tabs').style.display = 'none';
+            document.querySelector('.header .col-md-4').style.display = 'none';
+        });
+
+        window.addEventListener('afterprint', function() {
+            // Restore navigation after printing
+            document.querySelector('.nav-tabs').style.display = 'block';
+            document.querySelector('.header .col-md-4').style.display = 'block';
+        });
+
+        // Accessibility improvements
+        document.addEventListener('keydown', function(e) {
+            // Tab navigation for MCQ options
+            if (e.key === 'Enter' && e.target.classList.contains('mcq-option')) {
+                e.target.click();
+            }
+        });
+
+        // Performance monitoring
+        console.log('RRB Integrated Enhanced Study Tool loaded successfully!');
+        console.log('Features available: MLT Calculator, Converter, Scientific Calculator, Games, MCQs, Practice Tests');
+
+    </script>
+</body>
+</html>
